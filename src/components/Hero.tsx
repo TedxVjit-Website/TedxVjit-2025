@@ -36,7 +36,7 @@ const fadeUp = {
 
 export default function Hero() {
   return (
-    <section className="relative h-screen w-full overflow-hidden font-['Montserrat',sans-serif] text-white">
+    <section className="relative min-h-screen w-full overflow-hidden font-['Montserrat',sans-serif] text-white">
 
       {/* Background Image */}
       <Image
@@ -56,7 +56,7 @@ export default function Hero() {
           animationData={rotate}
           loop
           autoplay
-          className="w-full max-w-6xl"
+          className="w-full max-w-4xl sm:max-w-5xl md:max-w-6xl"
         />
       </div>
 
@@ -65,26 +65,22 @@ export default function Hero() {
         variants={container}
         initial="hidden"
         animate="show"
-        className="relative z-30 flex flex-col items-center justify-center h-full px-6 text-center"
+        className="relative z-30 flex flex-col items-center justify-center min-h-screen px-4 sm:px-6 text-center"
       >
         {/* Main Title */}
         <motion.h1
           variants={fadeUp}
-          className="text-5xl sm:text-6xl md:text-7xl font-extrabold  tracking-tight leading-tight drop-shadow-[0_4px_30px_rgba(255,0,0,0.7)]"
+          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-tight drop-shadow-[0_4px_30px_rgba(255,0,0,0.7)] px-2"
         >
-          <span className="text-red-600 ">TEDx</span>VJIT 2025
+          <span className="text-red-600">TEDx</span>VJIT 2025
         </motion.h1>
 
         {/* Subtitle */}
-
-
         <TypingText
           prefix="Metamorphism"
           text=" — The Evolution of Thought. The Power of Change."
-          className="mt-6 text-lg sm:text-xl font-extrabold md:text-3xl max-w-3xl text-white/90 leading-relaxed"
+          className="mt-4 sm:mt-6 text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl font-extrabold max-w-xs sm:max-w-sm md:max-w-2xl lg:max-w-3xl text-white/90 leading-relaxed px-2"
         />
-
-
 
         {/* CTA */}
         <motion.a
@@ -96,14 +92,11 @@ export default function Hero() {
             backgroundColor: "#b91c1c",
           }}
           whileTap={{ scale: 0.95 }}
-          className="mt-10 px-8 py-3 rounded-full font-semibold bg-red-600 text-white transition-all duration-300 shadow-lg inline-flex items-center gap-2"
+          className="mt-6 sm:mt-8 md:mt-10 px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold bg-red-600 text-white transition-all duration-300 shadow-lg inline-flex items-center gap-2 text-sm sm:text-base w-full sm:w-auto justify-center max-w-xs sm:max-w-none"
         >
-
-          <Ticket size={20} strokeWidth={2.5} className="text-white" />
-           Reserve Your Seat
+          <Ticket size={18} strokeWidth={2.5} className="text-white sm:w-5 sm:h-5" />
+          Reserve Your Seat
         </motion.a>
-
-
       </motion.div>
     </section>
   )
