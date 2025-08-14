@@ -57,7 +57,7 @@ export default function AboutPage() {
                 What is TEDx?
               </h2>
               <p className="text-lg text-gray-300 mb-6 leading-relaxed">
-                TEDx is a grassroots initiative, created in the spirit of TED's overall mission to research and discover "ideas worth spreading." TEDx brings the spirit of TED to local communities around the globe through TEDx events.
+                TEDx is a grassroots initiative, created in the spirit of TED&apos;s overall mission to research and discover &quot;ideas worth spreading.&quot; TEDx brings the spirit of TED to local communities around the globe through TEDx events.
               </p>
               <p className="text-lg text-gray-300 mb-6 leading-relaxed">
                 These events are organized by passionate individuals who seek to uncover new ideas and to share the latest research in their local areas that spark conversations in their communities.

@@ -1,38 +1,11 @@
 'use client'
 
-
-import { motion } from 'framer-motion'
 import Image from 'next/image'
 import Lottie from 'lottie-react'
 import mtm from '../../public/animations/mtm background effect.json'
 import rotate from '../../public/animations/Animation rotate.json'
 import TypingText from '../components/TypingText'
 import { Ticket } from 'lucide-react'
-const container = {
-  hidden: {},
-  show: {
-    transition: {
-      staggerChildren: 0.55,
-      delayChildren: 0.1,
-    },
-  },
-};
-
-const fadeUp = {
-  hidden: {
-    opacity: 0,
-    y: 10,
-  },
-  show: {
-    opacity: 1,
-    y: 0,
-    transition: {
-      stiffness: 100,
-      damping: 20,
-    },
-  },
-};
-
 
 export default function Hero() {
   return (
@@ -61,19 +34,11 @@ export default function Hero() {
       </div>
 
       {/* Hero Content */}
-      <motion.div
-        variants={container}
-        initial="hidden"
-        animate="show"
-        className="relative z-30 flex flex-col items-center justify-center min-h-screen px-4 sm:px-6 text-center"
-      >
+      <div className="relative z-30 flex flex-col items-center justify-center min-h-screen px-4 sm:px-6 text-center animate-fade-in">
         {/* Main Title */}
-        <motion.h1
-          variants={fadeUp}
-          className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-tight drop-shadow-[0_4px_30px_rgba(255,0,0,0.7)] px-2"
-        >
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight leading-tight drop-shadow-[0_4px_30px_rgba(255,0,0,0.7)] px-2 animate-fade-in-delay-1">
           <span className="text-red-600">TEDx</span>VJIT 2025
-        </motion.h1>
+        </h1>
 
         {/* Subtitle */}
         <TypingText
@@ -83,21 +48,14 @@ export default function Hero() {
         />
 
         {/* CTA */}
-        <motion.a
-          variants={fadeUp}
+        <a
           href="#register"
-          whileHover={{
-            scale: 1.08,
-            boxShadow: "0px 0px 25px rgba(255, 0, 0, 0.6)",
-            backgroundColor: "#b91c1c",
-          }}
-          whileTap={{ scale: 0.95 }}
-          className="mt-6 sm:mt-8 md:mt-10 px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold bg-red-600 text-white transition-all duration-300 shadow-lg inline-flex items-center gap-2 text-sm sm:text-base w-full sm:w-auto justify-center max-w-xs sm:max-w-none"
+          className="mt-6 sm:mt-8 md:mt-10 px-6 sm:px-8 py-3 sm:py-4 rounded-full font-semibold bg-red-600 text-white transition-all duration-300 shadow-lg inline-flex items-center gap-2 text-sm sm:text-base w-full sm:w-auto justify-center max-w-xs sm:max-w-none hover:scale-105 hover:shadow-2xl hover:shadow-red-500/25 hover:bg-red-700 animate-fade-in-delay-2"
         >
           <Ticket size={18} strokeWidth={2.5} className="text-white sm:w-5 sm:h-5" />
           Reserve Your Seat
-        </motion.a>
-      </motion.div>
+        </a>
+      </div>
     </section>
   )
 }

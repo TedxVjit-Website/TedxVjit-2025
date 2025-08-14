@@ -1,6 +1,5 @@
 'use client'
 import { useState, ChangeEvent, FormEvent } from 'react';
-import { motion } from 'framer-motion';
 
 interface FormData {
   name: string;
@@ -28,14 +27,9 @@ export default function RegistrationForm() {
   return (
     <section id="register" className="bg-gradient-to-br from-red-700 to-black text-white py-20 px-6 md:px-12">
       <div className="max-w-xl mx-auto bg-white/10 backdrop-blur-md p-8 rounded-lg shadow-xl">
-        <motion.h2
-          className="text-4xl font-bold text-center mb-8"
-          initial={{ opacity: 0, y: 40 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-        >
+        <h2 className="text-4xl font-bold text-center mb-8 animate-fade-in">
           Register for TEDxVJIT
-        </motion.h2>
+        </h2>
 
         <form className="space-y-6" onSubmit={handleSubmit}>
           <input
@@ -62,14 +56,12 @@ export default function RegistrationForm() {
             className="w-full px-5 py-3 rounded-md border border-white/30 bg-black/40 text-white focus:outline-none focus:ring-2 focus:ring-red-500"
             onChange={handleChange}
           />
-          <motion.button
+          <button
             type="submit"
-            className="w-full py-3 bg-red-600 hover:bg-red-700 rounded-md font-semibold text-white transition"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
+            className="w-full py-3 bg-red-600 hover:bg-red-700 rounded-md font-semibold text-white transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-red-500/25"
           >
             Submit
-          </motion.button>
+          </button>
         </form>
       </div>
     </section>

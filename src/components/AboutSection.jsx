@@ -1,5 +1,4 @@
 'use client'
-import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { Sparkles, Target, Users, Lightbulb } from 'lucide-react'
 
@@ -36,39 +35,15 @@ export default function AboutSection() {
 
       <div className="relative z-10">
         {/* Main Heading */}
-        <motion.div
-          className="text-center mb-8 sm:mb-12 md:mb-16"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.8 }}
-        >
-          <motion.h2
-            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-red-500 via-red-600 to-red-700 bg-clip-text text-transparent px-2"
-            initial={{ opacity: 0, scale: 0.9 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.2, duration: 0.8 }}
-          >
+        <div className="text-center mb-8 sm:mb-12 md:mb-16 animate-fade-in">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 sm:mb-6 bg-gradient-to-r from-red-500 via-red-600 to-red-700 bg-clip-text text-transparent px-2 animate-fade-in-delay-1">
             About Metamorphism
-          </motion.h2>
-          <motion.div
-            className="w-16 sm:w-20 md:w-24 h-1 bg-gradient-to-r from-red-500 to-red-700 mx-auto rounded-full"
-            initial={{ width: 0 }}
-            whileInView={{ width: 64 }}
-            viewport={{ once: true }}
-            transition={{ delay: 0.5, duration: 0.8 }}
-          />
-        </motion.div>
+          </h2>
+          <div className="w-16 sm:w-20 md:w-24 h-1 bg-gradient-to-r from-red-500 to-red-700 mx-auto rounded-full animate-fade-in-delay-2" />
+        </div>
 
         {/* Main Description */}
-        <motion.div
-          className="max-w-4xl mx-auto text-center mb-8 sm:mb-12 md:mb-16 px-4"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.3, duration: 0.8 }}
-        >
+        <div className="max-w-4xl mx-auto text-center mb-8 sm:mb-12 md:mb-16 px-4 animate-fade-in-delay-1">
           <p className="text-lg sm:text-xl md:text-2xl leading-relaxed text-gray-300 mb-4 sm:mb-6">
             Just as metamorphism transforms rocks through heat, pressure, and chemical activity, 
             <span className="text-red-400 font-semibold"> TEDx VJIT 2025</span> embodies the 
@@ -79,28 +54,15 @@ export default function AboutSection() {
             starts with a conversation. Join us as we explore the evolution of thought and harness 
             the power of change to shape a better tomorrow.
           </p>
-        </motion.div>
+        </div>
 
         {/* Features Grid */}
-        <motion.div
-          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 max-w-6xl mx-auto px-4"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.5, duration: 0.8 }}
-        >
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8 max-w-6xl mx-auto px-4 animate-fade-in-delay-2">
           {features.map((feature, index) => (
-            <motion.div
+            <div
               key={index}
-              className="text-center p-4 sm:p-6 rounded-xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700/30 hover:border-red-500/50 transition-all duration-300 hover:transform hover:scale-105 group"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: 0.6 + index * 0.1, duration: 0.6 }}
-              whileHover={{
-                boxShadow: "0 10px 30px rgba(239, 68, 68, 0.2)",
-                borderColor: "rgba(239, 68, 68, 0.5)"
-              }}
+              className="text-center p-4 sm:p-6 rounded-xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-sm border border-gray-700/30 hover:border-red-500/50 transition-all duration-300 hover:transform hover:scale-105 group animate-fade-in-delay-3"
+              style={{ animationDelay: `${0.6 + index * 0.1}s` }}
             >
               <div className="mb-3 sm:mb-4 flex justify-center">
                 <div className="p-2 sm:p-3 rounded-full bg-gray-800/50 group-hover:bg-red-500/20 transition-colors duration-300">
@@ -113,28 +75,20 @@ export default function AboutSection() {
               <p className="text-xs sm:text-sm text-gray-400 leading-relaxed">
                 {feature.description}
               </p>
-            </motion.div>
+            </div>
           ))}
-        </motion.div>
+        </div>
 
         {/* Call to Action */}
-        <motion.div
-          className="text-center mt-8 sm:mt-12 md:mt-16 px-4"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ delay: 0.8, duration: 0.8 }}
-        >
-          <motion.a
+        <div className="text-center mt-8 sm:mt-12 md:mt-16 px-4 animate-fade-in-delay-3">
+          <a
             href="#register"
             className="inline-flex items-center px-6 sm:px-8 py-3 sm:py-4 bg-gradient-to-r from-red-600 to-red-700 text-white font-semibold rounded-full text-base sm:text-lg transition-all duration-300 hover:from-red-700 hover:to-red-800 hover:scale-105 hover:shadow-2xl hover:shadow-red-500/25 w-full sm:w-auto justify-center"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
           >
             Be Part of the Transformation
             <Sparkles className="ml-2 w-4 h-4 sm:w-5 sm:h-5" />
-          </motion.a>
-        </motion.div>
+          </a>
+        </div>
       </div>
     </section>
   )

@@ -1,6 +1,5 @@
 'use client'
 
-import { motion } from 'framer-motion'
 import { useEffect, useState } from 'react'
 
 interface TypingTextProps {
@@ -30,17 +29,15 @@ export default function TypingText({
   }, [index, text, speed])
 
   return (
-    <motion.p
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ delay: 0.5, duration: 0 }}
-      className={className}
+    <p
+      className={`${className} animate-fade-in`}
+      style={{ animationDelay: '0.5s' }}
     >
-      <span className="inline-block font-bold text-transparent bg-clip-text bg-gradient-to-r from-yellow-400 via-red-500 to-red-700 animate-shimmer">
+      <span className="inline-block font-bold text-transparent bg-clip-text bg-gradient-to-r from-red-400 via-red-500 to-red-700 animate-shimmer">
         {prefix}
       </span>{' '}
       {displayedText}
       <span className="animate-pulse">|</span>
-    </motion.p>
+    </p>
   )
 }
