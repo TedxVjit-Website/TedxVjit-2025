@@ -7,7 +7,7 @@ import Image from 'next/image'
 const galleryItems = [
   { 
     id: 1,
-    src: '/gallery/KVK_3568.JPG', 
+    src: '/gallery/_DSC7571.JPG',  
     alt: 'TEDx Event Opening Ceremony',
     category: 'Event',
     description: 'The grand opening ceremony of our TEDx event with distinguished guests and speakers'
@@ -22,6 +22,8 @@ const galleryItems = [
   { 
     id: 3,
     src: '/gallery/_DSC7571.JPG', 
+    src: '/gallery/KVK_3568.JPG', 
+
     alt: 'Audience Engagement',
     category: 'Crowd',
     description: 'Captivated audience members during an engaging presentation session'
