@@ -42,7 +42,7 @@ export default function JoinTedxSection() {
         <div className="flex items-center gap-3 bg-black/60 px-5 py-3 rounded-xl shadow-md border border-red-900/30">
           <CalendarDays className="text-red-400 w-5 h-5" />
           <span className="text-white text-base md:text-lg font-medium">
-            October 25, 2025
+            TBA
           </span>
         </div>
         <div className="flex items-center gap-3 bg-black/60 px-5 py-3 rounded-xl shadow-md border border-red-900/30">
