@@ -14,7 +14,9 @@ export default function SchedulePreview() {
       <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 text-white">
         Event Schedule
       </h2>
-      <p className="text-xl text-red-500 font-semibold">To be Announced..</p>
+      <p className="text-xl md:text-2xl font-semibold text-white text-center px-6 py-2">
+        Discover thought-provoking speakers, inspiring sessions, and unforgettable moments
+      </p>
     </motion.div>
   );
 }
