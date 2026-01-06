@@ -48,7 +48,7 @@ export default function SpeakersPage() {
       name: 'Aishwarya T V Pillai',
       title: 'Accessibility Innovator',
       company: 'Grailmaker / Spacefelt',
-      image: 'https://ik.imagekit.io/w8o6876wf/Tedx-Vjit-Speakers/Aishwarya.jpeg',
+      image: 'https://ik.imagekit.io/vjlive/TEDx%20VJIT%202025/Speakers/1686123857520.jpg',
       bio: 'Creates inclusive tech solutions for visually impaired communities.',
       description:
         'Aishwarya T.V. is a visionary technologist and accessibility advocate. As Co-founder of Grailmaker Innovations and CMO at Spacefelt, she builds inclusive tech for visually impaired people and leads VisionNanny, an AI platform supporting visually challenged children.',
@@ -84,7 +84,7 @@ export default function SpeakersPage() {
       name: 'Vishnu Vijayan',
       title: 'AI Educator',
       company: '',
-      image: 'https://ik.imagekit.io/w8o6876wf/Tedx-Vjit-Speakers/Vishnu.jpeg',
+      image: 'https://ik.imagekit.io/vjlive/TEDx%20VJIT%202025/Speakers/1748492332778.jpg',
       bio: 'Explains AI through simple stories, memes, and analogies.',
       description:
         'Vishnu Vijayan makes AI simple and accessible through stories, memes, and everyday analogies. He democratizes AI education by helping students and professionals approach the future with clarity and confidence.',
@@ -102,7 +102,7 @@ export default function SpeakersPage() {
       name: 'Harshal Maniyar',
       title: 'Product Leader',
       company: 'Amber',
-      image: 'https://ik.imagekit.io/w8o6876wf/Tedx-Vjit-Speakers/Harshal.jpeg',
+      image: 'https://ik.imagekit.io/vjlive/TEDx%20VJIT%202025/Speakers/ZkJ1cIN8_400x400.jpg',
       bio: 'Builds AI-powered products focused on human-centered innovation.',
       description:
         'Harshal Maniyar is a creator and problem-solver leading product teams at Amber. He blends generative AI with thoughtful design to reimagine workflows and build experiences that keep people at the center.',
@@ -120,14 +120,14 @@ export default function SpeakersPage() {
       name: 'Dr. Mohd Ali Shah',
       title: 'Motivational Speaker',
       company: '',
-      image: 'https://ik.imagekit.io/vjlive/TEDx%20VJIT%202025/Core%20Images/TEDimage.JPG',
+      image: 'https://ik.imagekit.io/vjlive/TEDx%20VJIT%202025/Speakers/Mohammed_Ali_Shah%20(1).png',
       bio: 'One of the world’s most featured TEDx speakers and leadership mentor.',
       description:
         'Dr. Mohd Ali Shah’s journey spans the armed forces, corporate leadership, and global stages. An IIM graduate and a highly featured TEDx speaker, he inspires people to lead with courage, compassion, and authenticity.',
       expertise: ['Leadership', 'Motivational Speaking', 'Personal Growth'],
       social: {
         linkedin: '#',
-        instagram: '#',
+        instagram: 'https://www.instagram.com/majoralishah/',
         twitter: '#',
         website: '#'
       }
@@ -138,14 +138,14 @@ export default function SpeakersPage() {
       name: 'Jeet Basak',
       title: 'Digital Strategist',
       company: 'Snapchat',
-      image: 'https://ik.imagekit.io/vjlive/TEDx%20VJIT%202025/Core%20Images/TEDimage.JPG',
+      image: 'https://ik.imagekit.io/vjlive/TEDx%20VJIT%202025/Speakers/1721453020191.jpg',
       bio: 'Shapes how communities connect through digital culture and storytelling.',
       description:
         'Jeet Basak is a strategic thinker shaping digital culture at Snapchat. He leads Pop Culture and Partnerships, building initiatives around creativity and community while promoting inclusive storytelling and human-centered design.',
       expertise: ['Digital Strategy', 'Cultural Innovation', 'Community Design'],
       social: {
-          linkedin: '#',
-          instagram: '#',
+          linkedin: 'https://www.linkedin.com/in/jeetbasak/',
+          instagram: 'https://www.instagram.com/jeeeeet_/',
           twitter: '#',
           website: '#'
       }
