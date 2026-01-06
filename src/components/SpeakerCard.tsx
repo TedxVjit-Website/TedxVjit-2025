@@ -48,7 +48,7 @@ export default function SpeakerCard({ speaker }: SpeakerCardProps) {
   };
 
   // Responsive values
-  let imgSize = 170, imgClass = 'w-36 h-36', circleClass = 'w-36 h-36 top-2', yOffset = -18;
+  let imgSize = 170, imgClass = 'w-36 h-36', circleClass = 'w-36 h-36 top-8', yOffset = -12;
   let nameClass = 'text-[1.1rem]';
   let titleClass = 'text-[0.95rem]';
   let companyClass = 'text-xs';
@@ -56,18 +56,18 @@ export default function SpeakerCard({ speaker }: SpeakerCardProps) {
 
   if (mounted) {
     if (device === 'mobile') {
-      imgSize = 110;
-      imgClass = 'w-24 h-24';
-      circleClass = 'w-24 h-24 top-1';
-      yOffset = -10;
+      imgSize = 128;
+      imgClass = 'w-32 h-32';
+      circleClass = 'w-32 h-32 top-4';
+      yOffset = -6;
       nameClass = 'text-[1.1rem]';
       titleClass = 'text-[0.9rem]';
       iconClass = 'text-base';
     } else if (device === 'tablet') {
       imgSize = 140;
       imgClass = 'w-32 h-32';
-      circleClass = 'w-32 h-32 top-1';
-      yOffset = -14;
+      circleClass = 'w-32 h-32 top-6';
+      yOffset = -8;
       nameClass = 'text-[1.15rem]';
       titleClass = 'text-[1rem]';
       iconClass = 'text-[1.1rem]';
