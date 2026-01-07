@@ -223,7 +223,7 @@ export default function SpeakersPreview() {
     ),
   };
 
-  const handleViewAllClick = () => router.push("/2024/speakers");
+  const handleViewAllClick = () => router.push("/speakers");
 
   return (
     <section className="w-full mx-auto px-2 xs:px-3 sm:px-6 py-12 sm:py-16 md:py-20 relative bg-black">
