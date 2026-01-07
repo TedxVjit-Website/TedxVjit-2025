@@ -161,7 +161,7 @@ export default function JoinTedxSection() {
               }}
               className="bg-gradient-to-r from-yellow-400 via-red-500 to-yellow-400 bg-[length:200%_200%] bg-clip-text text-transparent drop-shadow-[0_0_10px_rgba(255,215,0,0.3)]"
             >
-              Your ticket is golden worthy – Grab your seat before it&apos;s too late!
+              Secure your seat now and be part of an unforgettable experience at TEDxVJIT
             </motion.span>
 
           </motion.p>
