@@ -32,6 +32,9 @@ export const metadata: Metadata = {
   },
   description:
     'TEDxVJIT 2025: Metamorphosis — an independently organized TED event at VJIT, Hyderabad. Explore speakers, schedule, venue details, and book tickets.',
+  verification: {
+    google: 'rJWgr_QE1lulNfn4OSh3ZZGP6HFrs7Rh6aiYfr2Tol0',
+  },
   alternates: {
     canonical: '/',
   },
