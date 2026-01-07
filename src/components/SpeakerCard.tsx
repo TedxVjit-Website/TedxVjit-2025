@@ -123,22 +123,22 @@ export default function SpeakerCard({ speaker }: SpeakerCardProps) {
 
         {(hovered || active) && (
           <div className={`relative z-10 flex flex-row gap-4 w-full justify-center mt-2 ${iconClass}`}>
-            {speaker.social?.linkedin && (
+            {speaker.social?.linkedin && speaker.social.linkedin !== '#' && (
               <a href={speaker.social.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-red-500 transition-colors">
                 <FaLinkedin />
               </a>
             )}
-            {speaker.social?.instagram && (
+            {speaker.social?.instagram && speaker.social.instagram !== '#' && (
               <a href={speaker.social.instagram} target="_blank" rel="noopener noreferrer" className="hover:text-red-500 transition-colors">
                 <FaInstagram />
               </a>
             )}
-            {speaker.social?.twitter && (
+            {speaker.social?.twitter && speaker.social.twitter !== '#' && (
               <a href={speaker.social.twitter} target="_blank" rel="noopener noreferrer" className="hover:text-red-500 transition-colors">
                 <FaTwitter />
               </a>
             )}
-            {speaker.social?.website && (
+            {speaker.social?.website && speaker.social.website !== '#' && (
               <a href={speaker.social.website} target="_blank" rel="noopener noreferrer" className="hover:text-red-500 transition-colors">
                 <FaGlobe />
               </a>

@@ -95,24 +95,6 @@ const sampleSpeakers = [
 
     {
       id: 4,
-      name: 'Ananya Lohan',
-      title: 'AI Researcher',
-      company: 'Athena.AI',
-      image: 'https://ik.imagekit.io/w8o6876wf/Tedx-Vjit-Speakers/Ananya.jpeg',
-      bio: 'Young researcher inspiring students through AI and STEM.',
-      description:
-        'Ananya Lohan is a curious researcher committed to creating impact through science and AI. As the founder of Athena.AI, she empowers students with STEM education and conducts workshops for underprivileged children to fuel creativity and curiosity.',
-      expertise: ['AI Research', 'STEM Education', 'Innovation'],
-      social: {
-        linkedin: 'https://www.linkedin.com/in/ananya-lohan-534675223/',
-        instagram: '#',
-        twitter: '#',
-        website: '#'
-      }
-    },
-
-    {
-      id: 5,
       name: 'Vishnu Vijayan',
       title: 'AI Educator',
       company: '',
@@ -126,6 +108,24 @@ const sampleSpeakers = [
         instagram: 'https://instagram.com/v.i.s.h.ai',
         twitter: '#',
         website: '#'
+      }
+    },
+
+    {
+      id: 5,
+      name: 'Prathamesh Sinha',
+      title: 'Social Innovator',
+      company: 'Thinkerbell Labs',
+      image: 'https://ik.imagekit.io/vjlive/TEDx%20VJIT%202025/Speakers/607368965_18084775550027583_3347693349190696838_n.jpg',
+      bio: '',
+      description:
+        '',
+      expertise: [],
+      social: {
+          linkedin: 'https://www.linkedin.com/in/prathmesh-sinha-713196277',
+          instagram: 'https://www.instagram.com/prathameshsinha__official/',
+          twitter: '#',
+          website: '#'
       }
     },
 
@@ -168,7 +168,7 @@ const sampleSpeakers = [
     {
       id: 8,
       name: 'Jeet Basak',
-      title: 'Digital Strategist',
+      title: 'Independent Music Artist',
       company: 'Snapchat',
       image: 'https://ik.imagekit.io/vjlive/TEDx%20VJIT%202025/Speakers/1721453020191.jpg',
       bio: 'Shapes how communities connect through digital culture and storytelling.',
@@ -178,6 +178,60 @@ const sampleSpeakers = [
       social: {
           linkedin: 'https://www.linkedin.com/in/jeetbasak/',
           instagram: 'https://www.instagram.com/jeeeeet_/',
+          twitter: '#',
+          website: '#'
+      }
+    },
+
+    {
+      id: 9,
+      name: 'Ananya Lohan',
+      title: 'AI Researcher',
+      company: 'Athena.AI',
+      image: 'https://ik.imagekit.io/w8o6876wf/Tedx-Vjit-Speakers/Ananya.jpeg',
+      bio: 'Young researcher inspiring students through AI and STEM.',
+      description:
+        'Ananya Lohan is a curious researcher committed to creating impact through science and AI. As the founder of Athena.AI, she empowers students with STEM education and conducts workshops for underprivileged children to fuel creativity and curiosity.',
+      expertise: ['AI Research', 'STEM Education', 'Innovation'],
+      social: {
+        linkedin: 'https://www.linkedin.com/in/ananya-lohan-534675223/',
+        instagram: '#',
+        twitter: '#',
+        website: '#'
+      }
+    },
+
+    {
+      id: 10,
+      name: 'BK Sumalatha',
+      title: 'Spiritual Mentor',
+      company: 'Spiritual Mentor',
+      image: 'https://ik.imagekit.io/vjlive/TEDx%20VJIT%202025/Speakers/hq720.jpg',
+      bio: 'Spiritual mentor known for expertise in Rajyoga and inner growth.',
+      description:
+        'BK Sumalatha is a spiritual mentor known for her expertise in Rajyoga, guiding individuals toward resilience, emotional balance, and inner growth through practical spiritual wisdom.',
+      expertise: ['Rajyoga', 'Spiritual Growth', 'Emotional Well-being'],
+      social: {
+          linkedin: '#',
+          instagram: '#',
+          twitter: '#',
+          website: '#'
+      }
+    },
+
+    {
+      id: 11,
+      name: 'Pradeep Kondiparthi',
+      title: 'Actor & Motivational Speaker',
+      company: 'Telugu Film Industry',
+      image: 'https://ik.imagekit.io/vjlive/TEDx%20VJIT%202025/Speakers/pradeep-kondiparthi.jpg',
+      bio: 'Renowned actor known for versatile roles in Telugu cinema and television.',
+      description:
+        'Pradeep Kondiparthi is a renowned actor in the Telugu film industry, known for his versatile roles in cinema and television. With a career spanning several decades, he has captivated audiences with his compelling performances and dedication to the craft of acting.',
+      expertise: ['Acting', 'Theatre', 'Film and Television'],
+      social: {
+          linkedin: '#',
+          instagram: 'https://www.instagram.com/pradeepkondiparthi?igsh=dXJmM2puZGYyc3dn',
           twitter: '#',
           website: '#'
       }
