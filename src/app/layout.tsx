@@ -25,6 +25,13 @@ export default function RootLayout({ children }: RootLayoutProps) {
     <html lang="en" className={`${inter.variable} ${poppins.variable}`}>
       <head>
         <title>TEDˣ VJIT</title>
+        <meta name="description" content="TEDx VJIT - Ideas Worth Spreading. Official TEDx event at VNR Vignana Jyothi Institute of Engineering and Technology" />
+        <meta name="keywords" content="TEDx, VJIT, TEDxVJIT, Conference, Speakers, Innovation, Ideas" />
+        <meta name="author" content="TEDx VJIT Team" />
+        <meta name="robots" content="index, follow" />
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="canonical" href="https://tedxvjit.in/" />
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
       </head>
       <body className="relative min-h-screen flex flex-col bg-gray-900 text-white font-sans">
