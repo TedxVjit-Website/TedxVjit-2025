@@ -1,25 +1,26 @@
-import { Metadata } from 'next'
+import type { Metadata } from 'next'
+import type { ReactNode } from 'react'
 
 export const metadata: Metadata = {
-  title: 'Speakers | TEDx VJIT 2025',
-  description: 'Discover inspiring speakers at TEDx VJIT 2025 - thought leaders, innovators, and visionaries sharing groundbreaking ideas.',
-  keywords: 'TEDx VJIT speakers, TEDx talks, inspirational speakers, innovation, thought leaders',
-  openGraph: {
-    title: 'Speakers | TEDx VJIT 2025',
-    description: 'Discover inspiring speakers at TEDx VJIT 2025',
-    url: 'https://tedxvjit.in/speakers',
-    siteName: 'TEDx VJIT',
-    type: 'website',
-  },
+  title: 'Speakers',
+  description:
+    'Meet the TEDxVJIT 2025 speakers — storytellers, innovators, and leaders sharing ideas worth spreading. View the lineup and book tickets.',
   alternates: {
-    canonical: 'https://tedxvjit.in/speakers',
+    canonical: '/speakers',
+  },
+  openGraph: {
+    title: 'TEDxVJIT Speakers',
+    description:
+      'Explore the TEDxVJIT 2025 speaker lineup for Metamorphosis and reserve your seat for the event in Hyderabad.',
+    url: '/speakers',
+  },
+  twitter: {
+    title: 'TEDxVJIT Speakers',
+    description:
+      'Explore the TEDxVJIT 2025 speaker lineup for Metamorphosis and reserve your seat for the event in Hyderabad.',
   },
 }
 
-export default function SpeakersLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function SpeakersLayout({ children }: { children: ReactNode }) {
   return children
 }

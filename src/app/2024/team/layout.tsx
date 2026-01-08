@@ -1,22 +1,26 @@
-import { Metadata } from 'next'
+import type { Metadata } from 'next'
+import type { ReactNode } from 'react'
 
 export const metadata: Metadata = {
-  title: 'Team 2024 | TEDx VJIT',
-  description: 'TEDx VJIT 2024 Team - Archive from our previous event.',
-  robots: {
-    index: true,
-    follow: true,
-    'max-image-preview': 'large',
-  },
+  title: '2024 Team',
+  description:
+    'Meet the TEDxVJIT 2024 organizing team — Power of Persistence. Explore the people behind the previous edition.',
   alternates: {
-    canonical: 'https://tedxvjit.in/2024/team',
+    canonical: '/2024/team',
+  },
+  openGraph: {
+    title: 'TEDxVJIT 2024 Team',
+    description:
+      'Meet the organizing team behind TEDxVJIT 2024 — Power of Persistence.',
+    url: '/2024/team',
+  },
+  twitter: {
+    title: 'TEDxVJIT 2024 Team',
+    description:
+      'Meet the organizing team behind TEDxVJIT 2024 — Power of Persistence.',
   },
 }
 
-export default function Team2024Layout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function Team2024Layout({ children }: { children: ReactNode }) {
   return children
 }

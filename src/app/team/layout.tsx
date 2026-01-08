@@ -1,25 +1,26 @@
-import { Metadata } from 'next'
+import type { Metadata } from 'next'
+import type { ReactNode } from 'react'
 
 export const metadata: Metadata = {
-  title: 'Team | TEDx VJIT 2025',
-  description: 'Meet the dedicated team behind TEDx VJIT 2025 - organizing an inspiring event with ideas worth spreading.',
-  keywords: 'TEDx VJIT team, organizers, core team, event management',
-  openGraph: {
-    title: 'Team | TEDx VJIT 2025',
-    description: 'Meet the dedicated team behind TEDx VJIT 2025',
-    url: 'https://tedxvjit.in/team',
-    siteName: 'TEDx VJIT',
-    type: 'website',
-  },
+  title: 'Team',
+  description:
+    'Meet the TEDxVJIT organizing team — the students, faculty, and volunteers bringing TEDxVJIT 2025 to life in Hyderabad.',
   alternates: {
-    canonical: 'https://tedxvjit.in/team',
+    canonical: '/team',
+  },
+  openGraph: {
+    title: 'TEDxVJIT Team',
+    description:
+      'Get to know the organizing team behind TEDxVJIT 2025 — Metamorphosis.',
+    url: '/team',
+  },
+  twitter: {
+    title: 'TEDxVJIT Team',
+    description:
+      'Get to know the organizing team behind TEDxVJIT 2025 — Metamorphosis.',
   },
 }
 
-export default function TeamLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export default function TeamLayout({ children }: { children: ReactNode }) {
   return children
 }
