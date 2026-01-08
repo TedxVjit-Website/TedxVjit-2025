@@ -134,7 +134,7 @@ const sampleSpeakers = [
       name: 'Harshal Maniyar',
       title: 'Product Leader',
       company: 'Amber',
-      image: 'https://ik.imagekit.io/vjlive/TEDx%20VJIT%202025/Speakers/ZkJ1cIN8_400x400.jpg',
+      image: 'https://ik.imagekit.io/vjlive/TEDx%20VJIT%202025/Speakers/WhatsApp%20Image%202026-01-07%20at%2023.03.21.jpeg',
       bio: 'Builds AI-powered products focused on human-centered innovation.',
       description:
         'Harshal Maniyar is a creator and problem-solver leading product teams at Amber. He blends generative AI with thoughtful design to reimagine workflows and build experiences that keep people at the center.',
@@ -149,7 +149,7 @@ const sampleSpeakers = [
 
     {
       id: 7,
-      name: 'Dr. Mohd Ali Shah',
+      name: 'Major Mohd Ali Shah',
       title: 'Motivational Speaker',
       company: '',
       image: 'https://ik.imagekit.io/vjlive/TEDx%20VJIT%202025/Speakers/Mohammed_Ali_Shah%20(1).png',
