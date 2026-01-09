@@ -263,7 +263,7 @@ export default function Navbar() {
 
               <div className="space-y-2">
                 <Link
-                  href="/#register-audience"
+                  href="https://vpulse.campx.in/vpulse/ums/public/form/68c93a448c6af42941ea051b"
                   onClick={() => setMenuOpen(false)}
                   className="flex items-center px-0 py-2 text-white hover:bg-red-600/20 rounded-lg group transition-all duration-300"
                 >
@@ -279,7 +279,7 @@ export default function Navbar() {
                 </Link>
 
                 <Link
-                  href="/#register-speaker"
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSd_XTYzOb5QbG7ZmtZWCrAPeyCR-mJQflKzSdgs0x5SGonWJw/viewform"
                   onClick={() => setMenuOpen(false)}
                   className="flex items-center px-0 py-3 text-white hover:bg-red-600/20 rounded-lg group  transition-all duration-300"
                 >
