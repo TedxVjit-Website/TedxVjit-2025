@@ -19,7 +19,7 @@ export default function SponsorsPreview() {
     const el = marqueeRef.current;
     if (!el) return;
 
-    const totalWidth = el.scrollWidth / 2; // half because we duplicate
+    const totalWidth = el.scrollWidth / 2;
     const tl = gsap.timeline({ repeat: -1, defaults: { ease: "linear" } });
     tl.to(el, { x: -totalWidth, duration: 20 });
 
@@ -29,7 +29,7 @@ export default function SponsorsPreview() {
   }, []);
 
   return (
-    <section className="w-full mx-auto px-8 py-12 bg-black overflow-hidden">
+    <section className="w-full bg-black py-12 overflow-hidden">
       <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-8 text-center text-white">
         Sponsors
       </h2>
@@ -39,7 +39,7 @@ export default function SponsorsPreview() {
           ref={marqueeRef}
           className="flex space-x-10 w-max"
         >
-          {/* original + duplicate */}
+
           {[...sponsors, ...sponsors].map((sponsor, idx) => (
             <div
               key={idx}
