@@ -11,6 +11,8 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const [dropdownOpen, setDropdownOpen] = useState(false)
+  const [prevOpen, setPrevOpen] = useState(false)
+  const [year2024Open, setYear2024Open] = useState(false)
 
   useMotionValueEvent(scrollY, 'change', (latest) => {
     setScrolled(latest > 70)
@@ -70,41 +72,110 @@ export default function Navbar() {
             </li>
           ))}
 
-          <li className="relative group/nav px-3 py-1">
+          <li className="relative px-3 py-1">
+            {/* MAIN BUTTON */}
             <button
-              className="relative z-10 text-white transition-colors duration-200 group-hover/nav:text-red-400 text-lg 2xl:text-xl flex items-center gap-1"
-              tabIndex={0}
+              onClick={() => {
+                setPrevOpen(v => !v)
+                setYear2024Open(false)
+              }}
+              className="relative z-10 text-white transition-colors duration-200
+               hover:text-red-400 text-lg 2xl:text-xl
+               flex items-center gap-1"
             >
               Previous Events
-              <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <svg
+                className={`w-4 h-4 ml-1 transition-transform duration-200 ${prevOpen ? 'rotate-180' : ''
+                  }`}
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
               </svg>
             </button>
 
-            <div className="absolute left-0 top-full min-w-[200px] bg-black/90 backdrop-blur-md rounded-xl shadow-lg z-40 opacity-0 group-hover/nav:opacity-100 group-focus-within/nav:opacity-100 pointer-events-none group-hover/nav:pointer-events-auto group-focus-within/nav:pointer-events-auto transition-opacity duration-200 border-t-4 border-transparent pt-0" style={{ marginTop: 0 }}>
-              <div className="relative group/2024">
-                <button
-                  className="w-full text-left px-6 py-3 text-white hover:bg-red-600/20 rounded-lg flex items-center justify-between group-hover/2024:text-red-400 group-focus/2024:text-red-400 text-base"
-                  tabIndex={0}
-                  style={{ minWidth: '180px' }}
+            {/* DROPDOWN */}
+            <AnimatePresence>
+              {prevOpen && (
+                <motion.div
+                  initial={{ opacity: 0, y: -8 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -8 }}
+                  transition={{ duration: 0.2 }}
+                  className="absolute left-0 top-full mt-2
+                   min-w-[200px]
+                   bg-black/90 backdrop-blur-md
+                   rounded-xl shadow-lg z-40
+                   border-t-4 border-transparent"
                 >
-                  2024
-                  <svg className="w-3 h-3 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </button>
+                  {/* 2024 ITEM */}
+                  <div className="relative">
+                    <button
+                      onClick={() => setYear2024Open(v => !v)}
+                      className="w-full text-left px-6 py-3
+                       text-white hover:bg-red-600/20
+                       rounded-lg flex items-center justify-between
+                       text-base"
+                    >
+                      2024
+                      <svg
+                        className={`w-3 h-3 transition-transform duration-200 ${year2024Open ? 'rotate-90' : ''
+                          }`}
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                      </svg>
+                    </button>
 
-                <div className="absolute left-full top-0 min-w-[180px] bg-black/90 backdrop-blur-md rounded-xl shadow-lg z-50 opacity-0 group-hover/2024:opacity-100 group-focus-within/2024:opacity-100 pointer-events-none group-hover/2024:pointer-events-auto group-focus-within/2024:pointer-events-auto transition-opacity duration-200 border-l-4 border-transparent pl-0"
-                  style={{ marginTop: 0 }}
-                  onMouseEnter={e => { e.currentTarget.parentElement?.parentElement?.classList.add('group-hover'); }}
-                  onMouseLeave={e => { e.currentTarget.parentElement?.parentElement?.classList.remove('group-hover'); }}
-                >
-                  <Link href="/2024/speakers" className="block px-6 py-3 text-white hover:bg-red-600/20 rounded-lg text-base" style={{ minWidth: '160px' }}>Speakers</Link>
-                  <Link href="/2024/team" className="block px-6 py-3 text-white hover:bg-red-600/20 rounded-lg text-base" style={{ minWidth: '160px' }}>Team</Link>
-                </div>
-              </div>
-            </div>
+                    {/* 2024 SUBMENU */}
+                    <AnimatePresence>
+                      {year2024Open && (
+                        <motion.div
+                          initial={{ opacity: 0, x: -10 }}
+                          animate={{ opacity: 1, x: 0 }}
+                          exit={{ opacity: 0, x: -10 }}
+                          transition={{ duration: 0.2 }}
+                          className="absolute left-full top-0
+                           min-w-[180px]
+                           bg-black/90 backdrop-blur-md
+                           rounded-xl shadow-lg z-50
+                           border-l-4 border-transparent"
+                        >
+                          <Link
+                            href="/2024/speakers"
+                            onClick={() => {
+                              setPrevOpen(false)
+                              setYear2024Open(false)
+                            }}
+                            className="block px-6 py-3 text-white
+                             hover:bg-red-600/20 rounded-lg text-base"
+                          >
+                            Speakers
+                          </Link>
+
+                          <Link
+                            href="/2024/team"
+                            onClick={() => {
+                              setPrevOpen(false)
+                              setYear2024Open(false)
+                            }}
+                            className="block px-6 py-3 text-white
+                             hover:bg-red-600/20 rounded-lg text-base"
+                          >
+                            Team
+                          </Link>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </div>
+                </motion.div>
+              )}
+            </AnimatePresence>
           </li>
+
         </ul>
 
         <div className="relative hidden xl:block ml-4">
