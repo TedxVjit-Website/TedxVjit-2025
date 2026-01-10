@@ -69,7 +69,7 @@ export default function TeamsPage() {
             { id: 31, name: "A. Sankeerth", title: "Co - Lead", company: "VJIT", image: "https://ik.imagekit.io/vjlive/TEDx%20VJIT%202025/Marketing/Sankeerth.jpg?updatedAt=1759331892883", bio: "", description: "", expertise: [], social: { linkedin: "https://www.linkedin.com/in/sankeerth-alla-3b4a3b336/", instagram: "", twitter: "", website: "" } },
             { id: 32, name: "Ch Vidya", title: "Team Member", company: "VJIT", image: "https://ik.imagekit.io/vjlive/TEDx%20VJIT%202025/Marketing/Ch%20vidya.jpg", bio: "", description: "", expertise: [], social: { linkedin: "https://www.linkedin.com/in/chakilam-vidya-515157378/", instagram: "", twitter: "", website: "" } },
             { id: 33, name: "Md. Mubashir", title: "Team Member", company: "VJIT", image: "https://ik.imagekit.io/vjlive/TEDx%20VJIT%202025/Marketing/Mohammad%20Mubashir%20Ahmed.jpg?updatedAt=1759331893580", bio: "", description: "", expertise: [], social: { linkedin: "https://www.linkedin.com/in/md-mubashir-ahmed-00511728b/", instagram: "", twitter: "", website: "" } },
-            { id: 34, name: "Garima Choudhary", title: "Team Member", company: "VJIT", image: "/Garima.jpeg", bio: "", description: "", expertise: [], social: { linkedin: "https://www.linkedin.com/in/garima-choudhary-51b404356/", instagram: "", twitter: "", website: "" } },
+            { id: 34, name: "Garima Choudhary", title: "Team Member", company: "VJIT", image: "https://ik.imagekit.io/vjlive/TEDx%20VJIT%202025/Tech/Garima.jpeg", bio: "", description: "", expertise: [], social: { linkedin: "https://www.linkedin.com/in/garima-choudhary-51b404356/", instagram: "", twitter: "", website: "" } },
             { id: 35, name: "Syed Iliyaz", title: "Team Member", company: "VJIT", image: "https://ik.imagekit.io/vjlive/TEDx%20VJIT%202025/Marketing/WhatsApp%20Image%202025-12-28%20at%2015.22.51.jpeg", bio: "", description: "", expertise: [], social: { linkedin: "https://www.linkedin.com/in/syediliyaz18/", instagram: "", twitter: "", website: "" } },
         ],
         Design: [
@@ -226,7 +226,7 @@ export default function TeamsPage() {
             <section className="py-10 px-4 sm:px-6 lg:px-8">
                 <div className="max-w-6xl mx-auto">
                     <div className="text-center my-8">
-                        <h2 className="text-2xl lg:text-3xl font-bold text-white">Other Teams</h2>
+                        <h2 className="text-2xl lg:text-3xl font-bold text-white">Student Team</h2>
                         <hr className="mx-auto mt-2 w-30 lg:w-36 border-t-2 border-red-500" />
                     </div>
                     {/* Team Tabs */}
