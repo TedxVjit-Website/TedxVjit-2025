@@ -92,12 +92,10 @@ export default function Hero() {
       >
         {/* Multiple Red gradient orbs with enhanced animations */}
         <motion.div
-          className="parallax-bg absolute top-1/4 left-1/4 w-[600px] h-[600px] bg-red-600/35 rounded-full blur-[160px]"
+          className="parallax-bg absolute top-1/4 left-1/4 w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] lg:w-[600px] lg:h-[600px] bg-red-600/45 sm:bg-red-600/35 rounded-full blur-[120px] sm:blur-[120px] lg:blur-[160px]"
           animate={{
             scale: [1, 1.3, 1],
-            x: [0, 60, 0],
-            y: [0, 40, 0],
-            opacity: [0.4, 0.6, 0.4],
+            opacity: [0.5, 0.7, 0.5],
           }}
           transition={{
             duration: 10,
@@ -106,12 +104,10 @@ export default function Hero() {
           }}
         />
         <motion.div
-          className="parallax-bg absolute bottom-1/4 right-1/4 w-[550px] h-[550px] bg-red-500/30 rounded-full blur-[150px]"
+          className="parallax-bg absolute bottom-1/4 right-1/4 w-[280px] h-[280px] sm:w-[380px] sm:h-[380px] lg:w-[550px] lg:h-[550px] bg-red-500/40 sm:bg-red-500/30 rounded-full blur-[120px] sm:blur-[120px] lg:blur-[150px]"
           animate={{
             scale: [1, 1.4, 1],
-            x: [0, -40, 0],
-            y: [0, -60, 0],
-            opacity: [0.35, 0.55, 0.35],
+            opacity: [0.45, 0.65, 0.45],
           }}
           transition={{
             duration: 12,
@@ -120,11 +116,9 @@ export default function Hero() {
           }}
         />
         <motion.div
-          className="parallax-bg absolute top-1/2 left-1/2 w-[450px] h-[450px] bg-red-400/25 rounded-full blur-[130px]"
+          className="hidden sm:block parallax-bg absolute top-1/2 left-1/2 w-[350px] h-[350px] lg:w-[450px] lg:h-[450px] bg-red-400/25 rounded-full blur-[100px] lg:blur-[130px]"
           animate={{
             scale: [1, 1.6, 1],
-            x: [-50, 50, -50],
-            y: [-40, 40, -40],
             rotate: [0, 180, 360]
           }}
           transition={{
@@ -135,7 +129,7 @@ export default function Hero() {
         />
 
         {/* Enhanced animated grid lines with vertical lines */}
-        <div className="absolute inset-0 opacity-8">
+        <div className="hidden sm:block absolute inset-0 opacity-8">
           {/* Horizontal lines */}
           {[...Array(12)].map((_, i) => (
             <motion.div
@@ -176,36 +170,30 @@ export default function Hero() {
 
         {/* Enhanced Rotating rings with better styling */}
         <motion.div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-red-500/15 rounded-full"
+          className="hidden md:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] border border-red-500/15 rounded-full"
           animate={{
             rotate: 360,
-            scale: [1, 1.08, 1]
           }}
           transition={{
             rotate: { duration: 25, repeat: Infinity, ease: 'linear' },
-            scale: { duration: 5, repeat: Infinity, ease: 'easeInOut' }
           }}
         />
         <motion.div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] border border-red-500/8 rounded-full"
+          className="hidden lg:block absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] border border-red-500/8 rounded-full"
           animate={{
             rotate: -360,
-            scale: [1, 1.12, 1]
           }}
           transition={{
             rotate: { duration: 35, repeat: Infinity, ease: 'linear' },
-            scale: { duration: 6, repeat: Infinity, ease: 'easeInOut' }
           }}
         />
         <motion.div
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[450px] h-[450px] border-2 border-red-600/20 rounded-full"
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[450px] h-[450px] border-2 border-red-600/15 sm:border-red-600/20 rounded-full"
           animate={{
             rotate: 360,
-            scale: [1, 1.15, 1]
           }}
           transition={{
             rotate: { duration: 20, repeat: Infinity, ease: 'linear' },
-            scale: { duration: 4, repeat: Infinity, ease: 'easeInOut' }
           }}
         />
       </motion.div>
@@ -219,16 +207,16 @@ export default function Hero() {
       >
         {/* Simplified TEDx Logo */}
         <motion.div variants={itemVariants} className="mb-4 sm:mb-6">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl tracking-tight" style={{ fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>
-            <span className="text-red-600 font-black">TED</span>
-            <sup ref={redXRef} className="text-red-600 inline-block text-xl sm:text-2xl md:text-3xl lg:text-3xl xl:text-4xl font-black">X</sup>
-            <span className="text-white ml-4 sm:ml-5 md:ml-6 font-medium">VJIT</span>
+          <h2 className="text-[1.7rem] sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl tracking-tight" style={{ fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>
+            <span className="text-red-600 font-black" style={{ fontWeight: 900 }}>TED</span>
+            <sup ref={redXRef} className="text-red-600 inline-block text-[0.95rem] sm:text-2xl md:text-3xl lg:text-3xl xl:text-4xl font-black" style={{ fontWeight: 900 }}>X</sup>
+            <span className="text-white ml-3 sm:ml-5 md:ml-6 font-medium">VJIT</span>
           </h2>
         </motion.div>
 
         {/* Main Title - Letter by letter animation */}
         <div className="mb-6 sm:mb-8 w-full px-0.5 sm:px-4">
-          <h1 className="text-[2.4rem] sm:text-5xl md:text-6xl lg:text-6xl xl:text-8xl font-black text-center flex flex-wrap justify-center gap-x-[0.02rem] sm:gap-x-1 md:gap-x-2 lg:gap-x-2 xl:gap-x-3 leading-tight" style={{ fontFamily: 'Cinzel, serif' }}>
+          <h1 className="text-[2.1rem] sm:text-5xl md:text-6xl lg:text-6xl xl:text-8xl font-black text-center flex flex-wrap justify-center gap-x-[0.01rem] sm:gap-x-1 md:gap-x-2 lg:gap-x-2 xl:gap-x-3 leading-tight" style={{ fontFamily: 'Cinzel, serif' }}>
             {title.split('').map((char, i) => (
               <motion.span
                 key={i}
@@ -284,10 +272,10 @@ export default function Hero() {
         {/* CTA Buttons */}
         <motion.div 
           variants={itemVariants} 
-          className="flex flex-col sm:flex-row gap-4 sm:gap-6 items-center"
+          className="flex flex-row gap-2 sm:gap-4 md:gap-6 items-center w-full sm:w-auto px-2 sm:px-0"
         >
           <motion.button
-            className="relative px-8 sm:px-10 py-3.5 sm:py-4 text-sm sm:text-base md:text-lg font-semibold text-white bg-gradient-to-r from-red-600 to-red-700 rounded-full overflow-hidden group shadow-lg shadow-red-600/20 w-full sm:w-auto"
+            className="relative px-4 sm:px-8 md:px-10 py-3 sm:py-3.5 md:py-4 text-xs sm:text-sm md:text-base lg:text-lg font-semibold text-white bg-gradient-to-r from-red-600 to-red-700 rounded-full overflow-hidden group shadow-lg shadow-red-600/20 flex-1 sm:flex-none"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.96 }}
             onClick={() => {
@@ -307,7 +295,7 @@ export default function Hero() {
           </motion.button>
 
           <motion.button
-            className="relative px-8 sm:px-10 py-3.5 sm:py-4 text-sm sm:text-base md:text-lg font-semibold text-black bg-white rounded-full overflow-hidden group shadow-lg shadow-white/10 w-full sm:w-auto"
+            className="relative px-4 sm:px-8 md:px-10 py-3 sm:py-3.5 md:py-4 text-xs sm:text-sm md:text-base lg:text-lg font-semibold text-black bg-white rounded-full overflow-hidden group shadow-lg shadow-white/10 flex-1 sm:flex-none"
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.96 }}
             onClick={() => {
