@@ -41,16 +41,16 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: 'website',
-    url: '/',
+    url: siteUrl,
     siteName: 'TEDˣ VJIT',
     title: 'TEDˣ VJIT 2026 — Metamorphosis',
     description:
       'Join TEDˣ VJIT 2026 in Hyderabad. Discover speakers, explore the theme Metamorphosis, and book tickets.',
     images: [
       {
-        url: '/assets/tedxvjlogo.png',
-        width: 1200,
-        height: 630,
+        url: `${siteUrl}/gallery/images/preview.png`,
+        width: 1894,
+        height: 865,
         alt: 'TEDˣ VJIT',
       },
     ],
@@ -60,7 +60,7 @@ export const metadata: Metadata = {
     title: 'TEDˣ VJIT 2026 — Metamorphosis',
     description:
       'Join TEDˣ VJIT 2026 in Hyderabad. Discover speakers, explore the theme Metamorphosis, and book tickets.',
-    images: ['/assets/tedxvjlogo.png'],
+    images: ['/gallery/images/preview.png'],
   },
   robots: {
     index: true,
