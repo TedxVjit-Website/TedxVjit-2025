@@ -219,16 +219,16 @@ export default function Hero() {
       >
         {/* Simplified TEDx Logo */}
         <motion.div variants={itemVariants} className="mb-4 sm:mb-6">
-          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight" style={{ fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl tracking-tight" style={{ fontFamily: "'Helvetica Neue', Helvetica, Arial, sans-serif" }}>
             <span className="text-red-600 font-black">TED</span>
-            <sup ref={redXRef} className="text-red-600 inline-block text-xl sm:text-2xl md:text-3xl lg:text-4xl font-black">X</sup>
+            <sup ref={redXRef} className="text-red-600 inline-block text-xl sm:text-2xl md:text-3xl lg:text-3xl xl:text-4xl font-black">X</sup>
             <span className="text-white ml-4 sm:ml-5 md:ml-6 font-medium">VJIT</span>
           </h2>
         </motion.div>
 
         {/* Main Title - Letter by letter animation */}
         <div className="mb-6 sm:mb-8 w-full px-0.5 sm:px-4">
-          <h1 className="text-[2.4rem] sm:text-5xl md:text-6xl lg:text-8xl font-black text-center flex flex-wrap justify-center gap-x-[0.02rem] sm:gap-x-1 md:gap-x-2 lg:gap-x-3 leading-tight" style={{ fontFamily: 'Cinzel, serif' }}>
+          <h1 className="text-[2.4rem] sm:text-5xl md:text-6xl lg:text-6xl xl:text-8xl font-black text-center flex flex-wrap justify-center gap-x-[0.02rem] sm:gap-x-1 md:gap-x-2 lg:gap-x-2 xl:gap-x-3 leading-tight" style={{ fontFamily: 'Cinzel, serif' }}>
             {title.split('').map((char, i) => (
               <motion.span
                 key={i}
@@ -251,7 +251,7 @@ export default function Hero() {
           variants={itemVariants} 
           className="mb-4 sm:mb-6 max-w-2xl text-center px-4"
         >
-          <p className="text-lg sm:text-xl md:text-2xl lg:text-3xl text-gray-300 font-light tracking-wide">
+          <p className="text-lg sm:text-xl md:text-2xl lg:text-2xl xl:text-3xl text-gray-300 font-light tracking-wide">
             The Journey of <span className="text-red-500 font-semibold">Becoming</span>
           </p>
         </motion.div>

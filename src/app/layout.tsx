@@ -49,8 +49,8 @@ export const metadata: Metadata = {
     images: [
       {
         url: `${siteUrl}/gallery/images/preview.jpg`,
-        width: 1894,
-        height: 865,
+        width: 1200,
+        height: 630,
         alt: 'TEDˣ VJIT',
       },
     ],
