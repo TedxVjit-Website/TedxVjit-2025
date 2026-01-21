@@ -6,11 +6,11 @@ import Image from 'next/image'
 import { motion, useScroll, useMotionValueEvent, AnimatePresence } from 'framer-motion'
 
 export default function Navbar() {
-  const ref = useRef<HTMLDivElement>(null)
-  const { scrollY } = useScroll({ target: ref })
+  const { scrollY } = useScroll()
   const [scrolled, setScrolled] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)
   const [dropdownOpen, setDropdownOpen] = useState(false)
+  const [eventsDropdownOpen, setEventsDropdownOpen] = useState(false)
 
   useMotionValueEvent(scrollY, 'change', (latest) => {
     setScrolled(latest > 70)
@@ -26,33 +26,48 @@ export default function Navbar() {
 
   return (
     <motion.header
-      ref={ref}
       animate={{
-        backgroundColor: scrolled ? 'rgba(0,0,0,1)' : 'rgba(0,0,0,0)',
+        backgroundColor: scrolled ? 'rgba(0,0,0,0.4)' : 'transparent',
         boxShadow: scrolled
-          ? '0px 2px 6px rgba(225,29,72,0.4)'
+          ? '0 4px 30px rgba(0, 0, 0, 0.1)'
           : 'none',
-        backdropFilter: scrolled ? 'blur(8px)' : 'none',
-
+        backdropFilter: scrolled ? 'blur(12px) saturate(180%)' : 'blur(0px)',
+        borderBottom: scrolled ? '1px solid rgba(255, 255, 255, 0.1)' : '1px solid transparent',
         padding: '0.8rem 1.5rem',
       }}
-      transition={{ type: 'spring', stiffness: 40, damping: 20 }}
-      className="fixed  w-[100%] z-50"
+      transition={{ duration: 0.3, ease: 'easeInOut' }}
+      className="fixed w-full z-50"
+      style={{ 
+        backgroundColor: 'transparent',
+        WebkitBackdropFilter: scrolled ? 'blur(12px) saturate(180%)' : 'blur(0px)'
+      }}
     >
       <nav className="flex items-center justify-between w-full text-white">
-        <Link href="/" className="flex items-center gap-2">
-          <Image
-            src="/navbar/navlogo.png"
-            alt="TEDxVJIT Logo"
-            width={180}
-            height={180}
-            className="object-contain "
-          />
-        </Link>
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.1 }}
+        >
+          <Link href="/" className="flex items-center gap-2">
+            <Image
+              src="/navbar/navlogo.png"
+              alt="TEDˣ VJIT Logo"
+              width={180}
+              height={180}
+              className="object-contain "
+            />
+          </Link>
+        </motion.div>
 
         <ul className="hidden xl:flex gap-7 text-base 2xl:text-xl font-semibold tracking-wide relative">
           {navLinks.map((item, idx) => (
-            <li key={idx} className="relative group px-3 py-1">
+            <motion.li
+              key={idx}
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 + idx * 0.1 }}
+              className="relative group px-3 py-1"
+            >
               <Link
                 href={item.href}
                 onClick={(e) => {
@@ -67,10 +82,17 @@ export default function Navbar() {
               >
                 {item.text}
               </Link>
-            </li>
+            </motion.li>
           ))}
 
-          <li className="relative group/nav px-3 py-1">
+          <motion.li
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 + navLinks.length * 0.1 }}
+            className="relative group/nav px-3 py-1"
+            onMouseEnter={() => setEventsDropdownOpen(true)}
+            onMouseLeave={() => setEventsDropdownOpen(false)}
+          >
             <button
               className="relative z-10 text-white transition-colors duration-200 group-hover/nav:text-red-400 text-lg 2xl:text-xl flex items-center gap-1"
               tabIndex={0}
@@ -81,33 +103,52 @@ export default function Navbar() {
               </svg>
             </button>
 
-            <div className="absolute left-0 top-full min-w-[200px] bg-black/90 backdrop-blur-md rounded-xl shadow-lg z-40 opacity-0 group-hover/nav:opacity-100 group-focus-within/nav:opacity-100 pointer-events-none group-hover/nav:pointer-events-auto group-focus-within/nav:pointer-events-auto transition-opacity duration-200 border-t-4 border-transparent pt-0" style={{ marginTop: 0 }}>
-              <div className="relative group/2024">
-                <button
-                  className="w-full text-left px-6 py-3 text-white hover:bg-red-600/20 rounded-lg flex items-center justify-between group-hover/2024:text-red-400 group-focus/2024:text-red-400 text-base"
-                  tabIndex={0}
-                  style={{ minWidth: '180px' }}
-                >
-                  2024
-                  <svg className="w-3 h-3 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </button>
+            {eventsDropdownOpen && (
+              <div className="absolute left-0 top-full min-w-[200px] bg-black/30 backdrop-blur-xl rounded-xl shadow-lg z-40 transition-opacity duration-200 border border-white/10 pt-0" style={{ marginTop: 0 }}>
+                <div className="relative group/2024">
+                  <button
+                    className="w-full text-left px-6 py-3 text-white hover:bg-red-600/20 rounded-lg flex items-center justify-between group-hover/2024:text-red-400 group-focus/2024:text-red-400 text-base"
+                    tabIndex={0}
+                    style={{ minWidth: '180px' }}
+                  >
+                    2024
+                    <svg className="w-3 h-3 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </button>
 
-                <div className="absolute left-full top-0 min-w-[180px] bg-black/90 backdrop-blur-md rounded-xl shadow-lg z-50 opacity-0 group-hover/2024:opacity-100 group-focus-within/2024:opacity-100 pointer-events-none group-hover/2024:pointer-events-auto group-focus-within/2024:pointer-events-auto transition-opacity duration-200 border-l-4 border-transparent pl-0"
-                  style={{ marginTop: 0 }}
-                  onMouseEnter={e => { e.currentTarget.parentElement?.parentElement?.classList.add('group-hover'); }}
-                  onMouseLeave={e => { e.currentTarget.parentElement?.parentElement?.classList.remove('group-hover'); }}
-                >
-                  <Link href="/2024/speakers" className="block px-6 py-3 text-white hover:bg-red-600/20 rounded-lg text-base" style={{ minWidth: '160px' }}>Speakers</Link>
-                  <Link href="/2024/team" className="block px-6 py-3 text-white hover:bg-red-600/20 rounded-lg text-base" style={{ minWidth: '160px' }}>Team</Link>
+                  <div className="absolute left-full top-0 min-w-[180px] bg-black/30 backdrop-blur-xl rounded-xl shadow-lg z-50 opacity-0 group-hover/2024:opacity-100 group-focus-within/2024:opacity-100 pointer-events-none group-hover/2024:pointer-events-auto group-focus-within/2024:pointer-events-auto transition-opacity duration-200 border border-white/10 pl-0"
+                    style={{ marginTop: 0 }}
+                  >
+                    <Link 
+                      href="/2024/speakers" 
+                      className="block px-6 py-3 text-white hover:bg-red-600/20 rounded-lg text-base" 
+                      style={{ minWidth: '160px' }}
+                      onClick={() => setEventsDropdownOpen(false)}
+                    >
+                      Speakers
+                    </Link>
+                    <Link 
+                      href="/2024/team" 
+                      className="block px-6 py-3 text-white hover:bg-red-600/20 rounded-lg text-base" 
+                      style={{ minWidth: '160px' }}
+                      onClick={() => setEventsDropdownOpen(false)}
+                    >
+                      Team
+                    </Link>
+                  </div>
                 </div>
               </div>
-            </div>
-          </li>
+            )}
+          </motion.li>
         </ul>
 
-        <div className="relative hidden xl:block ml-4">
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.8 }}
+          className="relative hidden xl:block ml-4"
+        >
           <button
             onClick={() => setDropdownOpen(!dropdownOpen)}
             className="px-5 py-2.5 rounded-full text-sm font-semibold transition-transform duration-300
@@ -133,7 +174,7 @@ export default function Navbar() {
                 animate={{ opacity: 1, y: 0 }}
                 exit={{ opacity: 0, y: -10 }}
                 transition={{ duration: 0.2 }}
-                className="absolute right-0 mt-2 w-64 bg-black/90 backdrop-blur-md rounded-xl p-3 shadow-lg space-y-2 z-50"
+                className="absolute right-0 mt-2 w-64 bg-black/30 backdrop-blur-xl rounded-xl p-3 shadow-lg border border-white/10 space-y-2 z-50"
               >
 
                 <Link
@@ -170,12 +211,17 @@ export default function Navbar() {
               </motion.div>
             )}
           </AnimatePresence>
-        </div>
+        </motion.div>
 
-        <div className="xl:hidden ml-5">
+        <motion.div
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.9 }}
+          className="xl:hidden ml-5"
+        >
           <motion.button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="relative w-8 h-8 flex flex-col justify-between items-center focus:outline-none z-50"
+            className="relative w-7 h-7 flex flex-col justify-center items-center gap-2 focus:outline-none z-50"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
           >
@@ -203,7 +249,7 @@ export default function Navbar() {
               transition={{ duration: 0.4 }}
             />
           </motion.button>
-        </div>
+        </motion.div>
       </nav>
 
       <AnimatePresence>
@@ -211,7 +257,7 @@ export default function Navbar() {
           <>
             <motion.div
               initial={{ opacity: 0 }}
-              animate={{ opacity: 0.6 }}
+              animate={{ opacity: 0.4 }}
               exit={{ opacity: 0 }}
               onClick={() => setMenuOpen(false)}
               className="fixed inset-0 bg-black z-40"
@@ -221,7 +267,7 @@ export default function Navbar() {
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
               className="fixed top-16 left-0 w-full h-[calc(100vh-4rem)] 
-                   xl:hidden bg-black/95 backdrop-blur-lg 
+                   xl:hidden bg-black/30 backdrop-blur-xl border-t border-white/10 
                    rounded-t-2xl shadow-lg p-6 space-y-4 z-50 
                    overflow-y-auto md:pl-8"
             >

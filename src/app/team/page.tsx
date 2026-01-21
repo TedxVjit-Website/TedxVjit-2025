@@ -7,7 +7,7 @@ import SpeakerCard from '../../components/SpeakerCard'
 type TeamName =
     | 'Core'
     | 'Organising'
-    | 'Web Dev'
+    | 'Tech'
     | 'Marketing'
     | 'Design'
     | 'Sponsorship'
@@ -33,7 +33,7 @@ interface Member {
 }
 
 export default function TeamsPage() {
-    const [activeTeam, setActiveTeam] = useState<TeamName>('Web Dev')
+    const [activeTeam, setActiveTeam] = useState<TeamName>('Tech')
 
     const teams: Record<TeamName, Member[]> = {
         Core: [
@@ -57,7 +57,7 @@ export default function TeamsPage() {
             { id: 16, name: "Srinivasulu", title: "Convenor", company: "VJIT", image: "https://ik.imagekit.io/vjlive/TEDx%20VJIT%202025/Organizing/IMG_3132.PNG?updatedAt=1759522008332", bio: "", description: "", expertise: [], social: { linkedin: "#", instagram: "", twitter: "", website: "" } },
             { id: 17, name: "Dr. Ramesh Cheripelli", title: "Co - Convenor", company: "VJIT", image: "https://ik.imagekit.io/vjlive/TEDx%20VJIT%202025/Organizing/IMG_3129.PNG?updatedAt=1759522008551", bio: "", description: "", expertise: [], social: { linkedin: "https://www.linkedin.com/in/dr-ramesh-cheripelli-66057399/", instagram: "", twitter: "", website: "" } },
         ],
-        "Web Dev": [
+        Tech: [
             { id: 20, name: "Varshith Reddy", title: "Team Lead", company: "VJIT", image: "https://ik.imagekit.io/vjlive/TEDx%20VJIT%202025/Tech/Varshith.jpg?updatedAt=1757798704189", bio: "", description: "", expertise: [], social: { linkedin: "https://www.linkedin.com/in/varshithreddy-aileni", instagram: "", twitter: "", website: "" } },
             { id: 21, name: "Vijay Guttula", title: "Co - Lead", company: "VJIT", image: "https://ik.imagekit.io/vjlive/TEDx%20VJIT%202025/Tech/Vijay%20Guttula.jpg?updatedAt=1757798815754", bio: "", description: "", expertise: [], social: { linkedin: "https://linkedin.com/in/vijay-guttula", instagram: "", twitter: "", website: "" } },
             { id: 22, name: "Rahul Sai Nadh", title: "Team Member", company: "VJIT", image: "https://ik.imagekit.io/vjlive/TEDx%20VJIT%202025/Tech/Rahul.jpg?updatedAt=1757828582345", bio: "", description: "", expertise: [], social: { linkedin: "https://linkedin.com/in/rahul-sai-nadh-638a21324", instagram: "", twitter: "", website: "" } },

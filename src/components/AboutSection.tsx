@@ -10,16 +10,24 @@ gsap.registerPlugin(ScrollTrigger)
 
 export default function AboutSection() {
   useEffect(() => {
+    // Set initial states immediately
+    gsap.set('.about-img', { opacity: 0, x: -60 })
+    gsap.set('.about-heading', { opacity: 0, y: 30, scale: 0.97 })
+    gsap.set('.about-para', { opacity: 0, y: 25 })
+
+    // Refresh ScrollTrigger to recalculate positions
+    ScrollTrigger.refresh()
+
     // Animate image
     gsap.utils.toArray<HTMLElement>('.about-img').forEach(el => {
-      gsap.from(el, {
+      gsap.to(el, {
         scrollTrigger: {
           trigger: el,
           start: 'top 85%',
           toggleActions: 'play none none none',
         },
-        opacity: 0,
-        x: -60,
+        opacity: 1,
+        x: 0,
         duration: 1,
         ease: 'power2.out',
       })
@@ -27,15 +35,15 @@ export default function AboutSection() {
 
     // Animate heading
     gsap.utils.toArray<HTMLElement>('.about-heading').forEach(el => {
-      gsap.from(el, {
+      gsap.to(el, {
         scrollTrigger: {
           trigger: el,
           start: 'top 90%',
           toggleActions: 'play none none none',
         },
-        opacity: 0,
-        y: 30,
-        scale: 0.97,
+        opacity: 1,
+        y: 0,
+        scale: 1,
         duration: 0.8,
         ease: 'power2.out',
       })
@@ -43,29 +51,38 @@ export default function AboutSection() {
 
     // Animate paragraphs
     gsap.utils.toArray<HTMLElement>('.about-para').forEach((el, i) => {
-      gsap.from(el, {
+      gsap.to(el, {
         scrollTrigger: {
           trigger: el,
           start: 'top 90%',
           toggleActions: 'play none none none',
         },
-        opacity: 0,
-        y: 25,
+        opacity: 1,
+        y: 0,
         duration: 0.8,
         delay: i * 0.15,
         ease: 'power2.out',
       })
     })
+
+    return () => {
+      ScrollTrigger.getAll().forEach(trigger => {
+        if (trigger.vars.trigger && 
+            (trigger.vars.trigger as HTMLElement).closest('#about')) {
+          trigger.kill()
+        }
+      })
+    }
   }, [])
 
   return (
-    <section className="relative w-full min-h-[90vh] bg-gradient-to-br from-black via-red-900 to-black flex flex-col lg:flex-row items-center justify-center px-4 sm:px-8 py-16 sm:py-24 gap-8">
+    <section id="about" className="relative w-full min-h-screen bg-gradient-to-br from-black via-red-900 to-black flex flex-col lg:flex-row items-center justify-center px-4 sm:px-8 py-16 sm:py-24 gap-8">
       {/* Left Image */}
       <div className="about-img w-full lg:w-1/2 flex justify-center items-center mb-8 lg:mb-0">
         <div className="rounded-2xl overflow-hidden shadow-2xl border border-gray-800 bg-black/60 max-w-xl w-full aspect-video">
           <img
             src="https://ik.imagekit.io/vjlive/TEDx%20VJIT%202025/Core%20Images/G-images-2.JPG?updatedAt=1759593304566"
-            alt="TEDxVJIT event"
+            alt="TEDˣ VJIT event"
             className="w-full h-full object-cover"
           />
         </div>

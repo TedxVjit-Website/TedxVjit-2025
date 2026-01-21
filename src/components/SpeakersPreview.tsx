@@ -153,9 +153,9 @@ const sampleSpeakers = [
       title: 'Motivational Speaker',
       company: '',
       image: 'https://ik.imagekit.io/vjlive/TEDx%20VJIT%202025/Speakers/Mohammed_Ali_Shah%20(1).png',
-      bio: 'One of the world’s most featured TEDx speakers and leadership mentor.',
+      bio: 'One of the world’s most featured TEDˣ speakers and leadership mentor.',
       description:
-        'Dr. Mohd Ali Shah’s journey spans the armed forces, corporate leadership, and global stages. An IIM graduate and a highly featured TEDx speaker, he inspires people to lead with courage, compassion, and authenticity.',
+        'Dr. Mohd Ali Shah’s journey spans the armed forces, corporate leadership, and global stages. An IIM graduate and a highly featured TEDˣ speaker, he inspires people to lead with courage, compassion, and authenticity.',
       expertise: ['Leadership', 'Motivational Speaking', 'Personal Growth'],
       social: {
         linkedin: '#',

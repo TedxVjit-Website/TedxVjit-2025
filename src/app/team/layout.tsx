@@ -4,20 +4,20 @@ import type { ReactNode } from 'react'
 export const metadata: Metadata = {
   title: 'Team',
   description:
-    'Meet the TEDxVJIT organizing team — the students, faculty, and volunteers bringing TEDxVJIT 2025 to life in Hyderabad.',
+    'Meet the TEDˣ VJIT organizing team — the students, faculty, and volunteers bringing TEDˣ VJIT 2026 to life in Hyderabad.',
   alternates: {
     canonical: '/team',
   },
   openGraph: {
-    title: 'TEDxVJIT Team',
+    title: 'TEDˣ VJIT Team',
     description:
-      'Get to know the organizing team behind TEDxVJIT 2025 — Metamorphosis.',
+      'Get to know the organizing team behind TEDˣ VJIT 2026 — Metamorphosis.',
     url: '/team',
   },
   twitter: {
-    title: 'TEDxVJIT Team',
+    title: 'TEDˣ VJIT Team',
     description:
-      'Get to know the organizing team behind TEDxVJIT 2025 — Metamorphosis.',
+      'Get to know the organizing team behind TEDˣ VJIT 2026 — Metamorphosis.',
   },
 }
 

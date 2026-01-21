@@ -2,6 +2,7 @@
 import './globals.css'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
+import CustomCursor from '../components/CustomCursor'
 import { ReactNode } from 'react'
 import type { Metadata } from 'next'
 import Script from 'next/script'
@@ -27,11 +28,11 @@ const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://tedxvjit.in'
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: 'TEDxVJIT',
-    template: '%s | TEDxVJIT',
+    default: 'TEDx VJIT',
+    template: '%s | TEDˣ VJIT',
   },
   description:
-    'TEDxVJIT 2025: Metamorphosis — an independently organized TED event at VJIT, Hyderabad. Explore speakers, schedule, venue details, and book tickets.',
+    'TEDˣ VJIT 2026: Metamorphosis — an independently organized TED event at VJIT, Hyderabad. Explore speakers, schedule, venue details, and book tickets.',
   verification: {
     google: 'rJWgr_QE1lulNfn4OSh3ZZGP6HFrs7Rh6aiYfr2Tol0',
   },
@@ -41,24 +42,24 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     url: '/',
-    siteName: 'TEDxVJIT',
-    title: 'TEDxVJIT 2025 — Metamorphosis',
+    siteName: 'TEDˣ VJIT',
+    title: 'TEDˣ VJIT 2026 — Metamorphosis',
     description:
-      'Join TEDxVJIT 2025 in Hyderabad. Discover speakers, explore the theme Metamorphosis, and book tickets.',
+      'Join TEDˣ VJIT 2026 in Hyderabad. Discover speakers, explore the theme Metamorphosis, and book tickets.',
     images: [
       {
         url: '/assets/tedxvjlogo.png',
         width: 1200,
         height: 630,
-        alt: 'TEDxVJIT',
+        alt: 'TEDˣ VJIT',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'TEDxVJIT 2025 — Metamorphosis',
+    title: 'TEDˣ VJIT 2026 — Metamorphosis',
     description:
-      'Join TEDxVJIT 2025 in Hyderabad. Discover speakers, explore the theme Metamorphosis, and book tickets.',
+      'Join TEDˣ VJIT 2026 in Hyderabad. Discover speakers, explore the theme Metamorphosis, and book tickets.',
     images: ['/assets/tedxvjlogo.png'],
   },
   robots: {
@@ -74,12 +75,12 @@ const structuredData = {
       '@type': 'WebSite',
       '@id': `${siteUrl}/#website`,
       url: siteUrl,
-      name: 'TEDxVJIT',
+      name: 'TEDˣ VJIT',
     },
     {
       '@type': 'Organization',
       '@id': `${siteUrl}/#organization`,
-      name: 'TEDxVJIT',
+      name: 'TEDˣ VJIT',
       url: siteUrl,
       logo: {
         '@type': 'ImageObject',
@@ -94,9 +95,9 @@ const structuredData = {
     {
       '@type': 'Event',
       '@id': `${siteUrl}/#event`,
-      name: 'TEDxVJIT — Metamorphosis',
+      name: 'TEDˣ VJIT — Metamorphosis',
       description:
-        'An independently organized TED event at Vidya Jyothi Institute of Technology, Hyderabad. Explore speakers and book tickets for TEDxVJIT.',
+        'An independently organized TED event at Vidya Jyothi Institute of Technology, Hyderabad. Explore speakers and book tickets for TEDˣ VJIT.',
       startDate: '2026-01-31',
       eventStatus: 'https://schema.org/EventScheduled',
       eventAttendanceMode: 'https://schema.org/OfflineEventAttendanceMode',
@@ -127,12 +128,13 @@ const structuredData = {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" className={`${inter.variable} ${poppins.variable}`}>
-      <body className="relative min-h-screen flex flex-col bg-gray-900 text-white font-sans">
+      <body className="relative min-h-screen flex flex-col bg-gray-900 text-white font-sans overflow-x-hidden cursor-none">
         <Script
           id="structured-data"
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
+        <CustomCursor />
         <Navbar />
         <main className="flex-grow font-[var(--font-inter)]">{children}</main>
         <Footer />

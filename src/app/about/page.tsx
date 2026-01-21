@@ -104,7 +104,7 @@ export default function AboutPage() {
             <div className="relative animate-fade-in-delay-1">
               <Image
                 src="https://ik.imagekit.io/vjlive/TEDx%20VJIT%202025/Core%20Images/Screenshot%202025-10-04%20213202.png?updatedAt=1759593832115"
-                alt="TEDxVJIT Event"
+                alt="TEDˣ VJIT Event"
                 width={800}
                 height={600}
                 className="rounded-2xl shadow-lg border border-red-500/30"
@@ -117,7 +117,7 @@ export default function AboutPage() {
             <div className="relative animate-fade-in-delay-2">
               <Image
                 src="https://ik.imagekit.io/vjlive/TEDx%20VJIT%202025/Core%20Images/G-images-1.JPG?updatedAt=1759593298737"
-                alt="TEDxVJIT Event"
+                alt="TEDˣ VJIT Event"
                 width={800}
                 height={600}
                 className="rounded-2xl shadow-lg border border-red-500/30"
@@ -188,7 +188,7 @@ export default function AboutPage() {
                 <div>
                   <Image
                     src="https://ik.imagekit.io/vjlive/TEDx%20VJIT%202025/Core%20Images/Screenshot%202025-10-04%20213144.png?updatedAt=1759593832587"
-                    alt="TEDxVJIT Event"
+                    alt="TEDˣ VJIT Event"
                     width={800}
                     height={600}
                     className="rounded-2xl shadow-lg border border-red-500/30 mx-auto"
@@ -197,7 +197,7 @@ export default function AboutPage() {
                 <div>
                   <Image
                     src="https://ik.imagekit.io/vjlive/TEDx%20VJIT%202025/Core%20Images/G-images-2.JPG?updatedAt=1759593304566"
-                    alt="TEDxVJIT Event"
+                    alt="TEDˣ VJIT Event"
                     width={800}
                     height={600}
                     className="rounded-2xl shadow-lg border border-red-500/30 mx-auto"
@@ -206,7 +206,7 @@ export default function AboutPage() {
                 <div>
                   <Image
                     src="https://ik.imagekit.io/vjlive/TEDx%20VJIT%202025/Core%20Images/_DSC7474.JPG?updatedAt=1759593301174"
-                    alt="TEDxVJIT Event"
+                    alt="TEDˣ VJIT Event"
                     width={800}
                     height={600}
                     className="rounded-2xl shadow-lg border border-red-500/30 mx-auto"
@@ -215,7 +215,7 @@ export default function AboutPage() {
                 <div>
                   <Image
                     src="https://ik.imagekit.io/vjlive/TEDx%20VJIT%202025/Core%20Images/G-images-3.JPG?updatedAt=1759593295760"
-                    alt="TEDxVJIT Event"
+                    alt="TEDˣ VJIT Event"
                     width={800}
                     height={600}
                     className="rounded-2xl shadow-lg border border-red-500/30 mx-auto"
@@ -224,7 +224,7 @@ export default function AboutPage() {
                 <div>
                   <Image
                     src="https://ik.imagekit.io/vjlive/TEDx%20VJIT%202025/Core%20Images/G-images-1.JPG?updatedAt=1759593298737"
-                    alt="TEDxVJIT Event"
+                    alt="TEDˣ VJIT Event"
                     width={800}
                     height={600}
                     className="rounded-2xl shadow-lg border border-red-500/30 mx-auto"
