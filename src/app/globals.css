@@ -1,3 +1,12 @@
+/* ✅ Local Fonts */
+@font-face {
+  font-family: 'Cinzel';
+  src: url('/fonts/Cinzel/Cinzel-VariableFont_wght.ttf') format('truetype');
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
 /* ✅ Google Fonts */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Montserrat:wght@700;800;900&display=swap');
 
@@ -93,7 +102,6 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: 'Inter', sans-serif; /* clean readable for paragraphs */
-  cursor: url('/cursor/butterfly.png'), auto;
 }
 
 h1, h2, h3, h4, h5, h6 {

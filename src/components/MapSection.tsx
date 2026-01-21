@@ -20,7 +20,7 @@ function MapSection() {
       <div className="w-full max-w-7xl grid grid-cols-1 lg:grid-cols-2 gap-12">
         {/* Left Box - Address */}
         <motion.div
-          initial={{ opacity: 0, x: -30 }}
+          initial={{ opacity: 0, x: -20 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true, amount: 0.3 }}
@@ -52,7 +52,7 @@ function MapSection() {
 
         {/* Right Box - Map */}
         <motion.div
-          initial={{ opacity: 0, x: 30 }}
+          initial={{ opacity: 0, x: 20 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true, amount: 0.3 }}

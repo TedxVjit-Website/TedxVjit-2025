@@ -12,7 +12,7 @@ export default function Footer() {
             <div className="flex justify-center sm:justify-start mb-4">
               <Image
                 src="/assets/tedxvjlogo.png"
-                alt="TEDxVJIT Logo"
+                alt="TEDˣ VJIT Logo"
                 width={120}
                 height={120}
                 className="object-contain w-24 sm:w-28 md:w-32"
