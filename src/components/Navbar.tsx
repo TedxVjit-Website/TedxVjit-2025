@@ -221,32 +221,32 @@ export default function Navbar() {
         >
           <motion.button
             onClick={() => setMenuOpen(!menuOpen)}
-            className="relative w-7 h-7 flex flex-col justify-center items-center gap-2 focus:outline-none z-50"
+            className="relative w-7 h-7 flex flex-col justify-center items-center focus:outline-none z-50"
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.95 }}
           >
             <motion.span
               animate={{
                 rotate: menuOpen ? 45 : 0,
-                y: menuOpen ? 8 : 0,
+                y: menuOpen ? 0 : -8,
                 backgroundColor: menuOpen ? '#e11d48' : '#fff',
               }}
-              className="block h-0.5 w-full rounded-full"
-              transition={{ duration: 0.4 }}
+              className="block h-0.5 w-full rounded-full absolute"
+              transition={{ duration: 0.3 }}
             />
             <motion.span
               animate={{ opacity: menuOpen ? 0 : 1 }}
-              className="block h-0.5 w-full bg-white rounded-full"
+              className="block h-0.5 w-full bg-white rounded-full absolute"
               transition={{ duration: 0.2 }}
             />
             <motion.span
               animate={{
                 rotate: menuOpen ? -45 : 0,
-                y: menuOpen ? -20 : 0,
+                y: menuOpen ? 0 : 8,
                 backgroundColor: menuOpen ? '#e11d48' : '#fff',
               }}
-              className="block h-0.5 w-full rounded-full"
-              transition={{ duration: 0.4 }}
+              className="block h-0.5 w-full rounded-full absolute"
+              transition={{ duration: 0.3 }}
             />
           </motion.button>
         </motion.div>
@@ -257,17 +257,19 @@ export default function Navbar() {
           <>
             <motion.div
               initial={{ opacity: 0 }}
-              animate={{ opacity: 0.4 }}
+              animate={{ opacity: 0.85 }}
               exit={{ opacity: 0 }}
               onClick={() => setMenuOpen(false)}
-              className="fixed inset-0 bg-black z-40"
+              className="fixed inset-0 bg-black z-40 xl:hidden"
+              transition={{ duration: 0.3 }}
             />
             <motion.div
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.3 }}
               className="fixed top-16 left-0 w-full h-[calc(100vh-4rem)] 
-                   xl:hidden bg-black/30 backdrop-blur-xl border-t border-white/10 
+                   xl:hidden bg-black/95 backdrop-blur-xl border-t border-white/10 
                    rounded-t-2xl shadow-lg p-6 space-y-4 z-50 
                    overflow-y-auto md:pl-8"
             >

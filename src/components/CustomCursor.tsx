@@ -6,8 +6,19 @@ import { motion } from 'framer-motion'
 export default function CustomCursor() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 })
   const [isVisible, setIsVisible] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
 
   useEffect(() => {
+    // Check if device is mobile/touch device
+    const checkMobile = () => {
+      setIsMobile('ontouchstart' in window || navigator.maxTouchPoints > 0)
+    }
+    
+    checkMobile()
+    
+    // Don't add mouse listeners on mobile
+    if (isMobile) return
+
     const handleMouseMove = (e: MouseEvent) => {
       setMousePosition({ x: e.clientX, y: e.clientY })
       if (!isVisible) setIsVisible(true)
@@ -22,7 +33,10 @@ export default function CustomCursor() {
       window.removeEventListener('mousemove', handleMouseMove)
       document.removeEventListener('mouseleave', handleMouseLeave)
     }
-  }, [isVisible])
+  }, [isVisible, isMobile])
+
+  // Don't render cursor on mobile devices
+  if (isMobile) return null
 
   return (
     <motion.div
