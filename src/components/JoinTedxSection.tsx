@@ -82,7 +82,7 @@ export default function JoinTedxSection() {
       >
         
         <h1 className="text-white text-5xl md:text-7xl font-extrabold tracking-tight drop-shadow-2xl mb-4">
-          Join <span className="bg-gradient-to-r from-red-500 via-red-600 to-red-500 bg-clip-text text-transparent animate-gradient">TED<sup className="text-4xl md:text-4xl text-red-600">X</sup> VJIT</span>
+          Join <span className="bg-gradient-to-r from-red-500 via-red-600 to-red-500 bg-clip-text text-transparent animate-gradient">TED<sup className="text-2xl md:text-3xl text-red-600">X</sup> VJIT</span>
         </h1>
         <motion.div
           className="w-32 h-1 bg-gradient-to-r from-transparent via-red-600 to-transparent mb-6"
