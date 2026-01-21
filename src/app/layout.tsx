@@ -48,7 +48,7 @@ export const metadata: Metadata = {
       'Join TEDˣ VJIT 2026 in Hyderabad. Discover speakers, explore the theme Metamorphosis, and book tickets.',
     images: [
       {
-        url: `${siteUrl}/gallery/images/preview.png`,
+        url: `${siteUrl}/gallery/images/preview.jpg`,
         width: 1894,
         height: 865,
         alt: 'TEDˣ VJIT',
