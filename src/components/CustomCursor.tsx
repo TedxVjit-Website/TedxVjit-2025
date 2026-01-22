@@ -43,8 +43,8 @@ export default function CustomCursor() {
       className="fixed top-0 left-0 pointer-events-none z-[9999]"
       initial={{ opacity: 0 }}
       animate={{
-        x: mousePosition.x - 8,
-        y: mousePosition.y - 8,
+        x: mousePosition.x - 6,
+        y: mousePosition.y - 6,
         opacity: isVisible ? 1 : 0
       }}
       transition={{
@@ -54,7 +54,7 @@ export default function CustomCursor() {
       }}
     >
       {/* Outer glow */}
-      <div className="relative w-4 h-4">
+      <div className="relative w-3 h-3">
         {/* Main white dot */}
         <div className="absolute inset-0 bg-white rounded-full" />
         
@@ -62,7 +62,7 @@ export default function CustomCursor() {
         <div className="absolute inset-0 bg-white rounded-full blur-sm opacity-80 animate-pulse" />
         
         {/* Outer glow ring */}
-        <div className="absolute -inset-1 bg-white rounded-full blur-md opacity-50 animate-pulse" />
+        <div className="absolute -inset-0.5 bg-white rounded-full blur-md opacity-50 animate-pulse" />
       </div>
     </motion.div>
   )
