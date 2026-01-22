@@ -104,14 +104,14 @@ const sections = {
 const imageHeights = {
   "Tedx@2024": [
     '100%',  // Dance Performance - Square
-    '125%',  // Event Moment 1 - Portrait
+    '110%',  // Event Moment 1 - Portrait
     '90%',   // Event Moment 2 - Landscape
-    '133%',  // Gallery Image 2 - Tall
+    '135%',  // Gallery Image 2 - Tall
     '75%',   // Crowd Shot - Wide landscape
-    '100%',  // Gallery Image 1 - Square
-    '125%',  // Gallery Image 3 - Portrait
-    '90%',   // Event Photo 1 - Landscape
-    '133%',  // Event Photo 2 - Tall
+    '90%',  // Gallery Image 1 - Square
+    '120%',  // Gallery Image 3 - Portrait (adjusted for left alignment)
+    '95%',   // Event Photo 1 - Landscape (adjusted for left alignment)
+    '85%',  // Event Photo 2 - Tall (adjusted for left alignment)
     '75%',   // Event Photo 3 - Wide landscape
     '100%',  // Event Photo 4 - Square
     '125%',  // Event Photo 5 - Portrait
