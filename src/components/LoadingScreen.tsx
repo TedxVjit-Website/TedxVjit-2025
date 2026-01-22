@@ -55,7 +55,7 @@ export default function LoadingScreen() {
               strokeDashoffset="0"
               animate={{ rotate: 360 }}
               transition={{
-                duration: 1.5,
+                duration: 1.2,
                 repeat: Infinity,
                 ease: 'linear',
               }}
