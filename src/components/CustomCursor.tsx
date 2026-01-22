@@ -9,14 +9,17 @@ export default function CustomCursor() {
   const [isMobile, setIsMobile] = useState(false)
 
   useEffect(() => {
-    // Check if device is mobile/touch device
+    // Check if device is mobile phone (exclude tablets)
     const checkMobile = () => {
-      setIsMobile('ontouchstart' in window || navigator.maxTouchPoints > 0)
+      const isTouchDevice = 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+      const isSmallScreen = window.innerWidth < 768; // Only disable on screens smaller than tablet
+      setIsMobile(isTouchDevice && isSmallScreen);
     }
     
     checkMobile()
+    window.addEventListener('resize', checkMobile)
     
-    // Don't add mouse listeners on mobile
+    // Don't add mouse listeners on mobile phones
     if (isMobile) return
 
     const handleMouseMove = (e: MouseEvent) => {
@@ -32,10 +35,11 @@ export default function CustomCursor() {
     return () => {
       window.removeEventListener('mousemove', handleMouseMove)
       document.removeEventListener('mouseleave', handleMouseLeave)
+      window.removeEventListener('resize', checkMobile)
     }
   }, [isVisible, isMobile])
 
-  // Don't render cursor on mobile devices
+  // Don't render cursor on mobile phones only
   if (isMobile) return null
 
   return (
