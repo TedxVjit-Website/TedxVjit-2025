@@ -4,7 +4,7 @@ import React, { useRef, useEffect } from "react";
 import gsap from "gsap";
 
 const sponsors = [
-  { id: 1, logo: "https://ik.imagekit.io/vjlive/TEDx%20VJIT%202025/Core%20Images/TEDimage.JPG?updatedAt=1759593279876" },
+  { id: 1, logo: "https://ik.imagekit.io/vjlive/TEDx%20VJIT%202025/Sponsors/Screenshot-2024-07-27-at-1.50.29%E2%80%AFPM.png" },
   { id: 2, logo: "https://ik.imagekit.io/vjlive/TEDx%20VJIT%202025/Core%20Images/TEDimage.JPG?updatedAt=1759593279876" },
   { id: 3, logo: "https://ik.imagekit.io/vjlive/TEDx%20VJIT%202025/Core%20Images/TEDimage.JPG?updatedAt=1759593279876" },
   { id: 4, logo: "https://ik.imagekit.io/vjlive/TEDx%20VJIT%202025/Core%20Images/TEDimage.JPG?updatedAt=1759593279876" },
