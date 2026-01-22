@@ -94,11 +94,11 @@ export default function Hero() {
         <motion.div
           className="parallax-bg absolute top-1/4 left-1/4 w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] lg:w-[600px] lg:h-[600px] bg-red-600/45 sm:bg-red-600/35 rounded-full blur-[120px] sm:blur-[120px] lg:blur-[160px]"
           animate={{
-            scale: [1, 1.3, 1],
-            opacity: [0.5, 0.7, 0.5],
+            scale: [1, 1.8, 1],
+            opacity: [0.5, 0.8, 0.5],
           }}
           transition={{
-            duration: 10,
+            duration: 3.5,
             repeat: Infinity,
             ease: 'easeInOut'
           }}
@@ -106,11 +106,11 @@ export default function Hero() {
         <motion.div
           className="parallax-bg absolute bottom-1/4 right-1/4 w-[280px] h-[280px] sm:w-[380px] sm:h-[380px] lg:w-[550px] lg:h-[550px] bg-red-500/40 sm:bg-red-500/30 rounded-full blur-[120px] sm:blur-[120px] lg:blur-[150px]"
           animate={{
-            scale: [1, 1.4, 1],
-            opacity: [0.45, 0.65, 0.45],
+            scale: [1, 2, 1],
+            opacity: [0.45, 0.75, 0.45],
           }}
           transition={{
-            duration: 12,
+            duration: 4.5,
             repeat: Infinity,
             ease: 'easeInOut'
           }}
@@ -118,13 +118,13 @@ export default function Hero() {
         <motion.div
           className="hidden sm:block parallax-bg absolute top-1/2 left-1/2 w-[350px] h-[350px] lg:w-[450px] lg:h-[450px] bg-red-400/25 rounded-full blur-[100px] lg:blur-[130px]"
           animate={{
-            scale: [1, 1.6, 1],
-            rotate: [0, 180, 360]
+            scale: [1, 2.2, 1],
+            opacity: [0.3, 0.6, 0.3],
           }}
           transition={{
-            duration: 15,
+            duration: 5,
             repeat: Infinity,
-            ease: 'linear'
+            ease: 'easeInOut'
           }}
         />
 

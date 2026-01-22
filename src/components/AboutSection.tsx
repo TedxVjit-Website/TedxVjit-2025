@@ -15,55 +15,57 @@ export default function AboutSection() {
     gsap.set('.about-heading', { opacity: 0, y: 30, scale: 0.97 })
     gsap.set('.about-para', { opacity: 0, y: 25 })
 
-    // Refresh ScrollTrigger to recalculate positions
-    ScrollTrigger.refresh()
+    // Small delay to ensure elements are ready
+    setTimeout(() => {
+      ScrollTrigger.refresh()
 
-    // Animate image
-    gsap.utils.toArray<HTMLElement>('.about-img').forEach(el => {
-      gsap.to(el, {
-        scrollTrigger: {
-          trigger: el,
-          start: 'top 85%',
-          toggleActions: 'play none none none',
-        },
-        opacity: 1,
-        x: 0,
-        duration: 1,
-        ease: 'power2.out',
+      // Animate image
+      gsap.utils.toArray<HTMLElement>('.about-img').forEach(el => {
+        gsap.to(el, {
+          scrollTrigger: {
+            trigger: el,
+            start: 'top 95%',
+            toggleActions: 'play none none none',
+          },
+          opacity: 1,
+          x: 0,
+          duration: 0.8,
+          ease: 'power2.out',
+        })
       })
-    })
 
-    // Animate heading
-    gsap.utils.toArray<HTMLElement>('.about-heading').forEach(el => {
-      gsap.to(el, {
-        scrollTrigger: {
-          trigger: el,
-          start: 'top 90%',
-          toggleActions: 'play none none none',
-        },
-        opacity: 1,
-        y: 0,
-        scale: 1,
-        duration: 0.8,
-        ease: 'power2.out',
+      // Animate heading
+      gsap.utils.toArray<HTMLElement>('.about-heading').forEach(el => {
+        gsap.to(el, {
+          scrollTrigger: {
+            trigger: el,
+            start: 'top 95%',
+            toggleActions: 'play none none none',
+          },
+          opacity: 1,
+          y: 0,
+          scale: 1,
+          duration: 0.7,
+          ease: 'power2.out',
+        })
       })
-    })
 
-    // Animate paragraphs
-    gsap.utils.toArray<HTMLElement>('.about-para').forEach((el, i) => {
-      gsap.to(el, {
-        scrollTrigger: {
-          trigger: el,
-          start: 'top 90%',
-          toggleActions: 'play none none none',
-        },
-        opacity: 1,
-        y: 0,
-        duration: 0.8,
-        delay: i * 0.15,
-        ease: 'power2.out',
+      // Animate paragraphs
+      gsap.utils.toArray<HTMLElement>('.about-para').forEach((el, i) => {
+        gsap.to(el, {
+          scrollTrigger: {
+            trigger: el,
+            start: 'top 95%',
+            toggleActions: 'play none none none',
+          },
+          opacity: 1,
+          y: 0,
+          duration: 0.7,
+          delay: i * 0.1,
+          ease: 'power2.out',
+        })
       })
-    })
+    }, 100)
 
     return () => {
       ScrollTrigger.getAll().forEach(trigger => {
