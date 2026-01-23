@@ -141,17 +141,28 @@ export default function TeamsPage() {
     return (
         <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 my-auto">
             {/* Hero Section */}
-            <motion.section
-                className="relative min-h-screen flex flex-col justify-center py-20 px-4 overflow-hidden"
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: '-100px' }}
-                variants={heroVariants}
-            >
+            <section className="relative min-h-screen flex flex-col justify-center py-20 px-4 overflow-hidden">
+                {/* Background Image - Static, no animation */}
+                <div 
+                    className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-60"
+                    style={{
+                        backgroundImage: "url('https://ik.imagekit.io/vjlive/TEDx%20VJIT%202025/Core%20Images/WhatsApp%20Image%202026-01-23%20at%2010.03.07.jpeg')"
+                    }}
+                />
+                {/* Dark Overlay */}
+                <div className="absolute inset-0 bg-black/60" />
                 <div className="absolute inset-0 bg-gradient-to-r from-red-600/10 to-red-800/10" />
                 <div className="absolute top-0 left-0 w-96 h-96 bg-red-500/5 rounded-full blur-3xl" />
                 <div className="absolute bottom-0 right-0 w-96 h-96 bg-red-500/5 rounded-full blur-3xl" />
-                <div className="relative max-w-7xl mx-auto text-center">
+                
+                {/* Content with animation */}
+                <motion.div 
+                    className="relative max-w-7xl mx-auto text-center"
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: '-100px' }}
+                    variants={heroVariants}
+                >
                     <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
                         Meet Our
                         <span className="block text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-600">
@@ -161,8 +172,8 @@ export default function TeamsPage() {
                     <p className="text-xl md:text-2xl text-gray-300 max-w-3xl mx-auto mb-8 leading-relaxed">
                         The passionate individuals working behind the scenes to bring TED<sup>x</sup> VJIT to life.
                     </p>
-                </div>
-            </motion.section>
+                </motion.div>
+            </section>
 
             {/* Core Team Section */}
             <section ref={sectionRef} className="py-16 px-4 sm:px-6 lg:px-8">

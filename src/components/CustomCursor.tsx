@@ -47,8 +47,8 @@ export default function CustomCursor() {
       className="fixed top-0 left-0 pointer-events-none z-[9999]"
       initial={{ opacity: 0 }}
       animate={{
-        x: mousePosition.x - 6,
-        y: mousePosition.y - 6,
+        x: mousePosition.x - 8,
+        y: mousePosition.y - 8,
         opacity: isVisible ? 1 : 0
       }}
       transition={{
@@ -57,17 +57,12 @@ export default function CustomCursor() {
         opacity: { duration: 0.2 }
       }}
     >
-      {/* Outer glow */}
-      <div className="relative w-3 h-3">
-        {/* Main white dot */}
-        <div className="absolute inset-0 bg-white rounded-full" />
-        
-        {/* Shining effect - inner glow */}
-        <div className="absolute inset-0 bg-white rounded-full blur-sm opacity-80 animate-pulse" />
-        
-        {/* Outer glow ring */}
-        <div className="absolute -inset-0.5 bg-white rounded-full blur-md opacity-50 animate-pulse" />
-      </div>
+      <img 
+        src="/cursor/white-circle-svgrepo-com.svg" 
+        alt="" 
+        className="w-4 h-4"
+        style={{ filter: 'drop-shadow(0 0 4px rgba(255, 255, 255, 0.6))' }}
+      />
     </motion.div>
   )
 }
