@@ -134,7 +134,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
-        <CustomCursor />
+        {/* <CustomCursor /> */}
         <Navbar />
         <main className="flex-grow font-[var(--font-inter)]">{children}</main>
         <Footer />

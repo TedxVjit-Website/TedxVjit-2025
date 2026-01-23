@@ -13,7 +13,7 @@ export default function JoinTedxSection() {
       {/* Enhanced Background Effects */}
       <div className="absolute inset-0 -z-10">
         {/* Multiple animated gradient orbs */}
-        <motion.div 
+        <motion.div
           className="absolute top-20 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-red-600/20 blur-[180px] rounded-full"
           animate={{
             scale: [1, 1.2, 1],
@@ -25,7 +25,7 @@ export default function JoinTedxSection() {
             ease: "easeInOut"
           }}
         />
-        <motion.div 
+        <motion.div
           className="absolute bottom-20 left-1/4 w-[400px] h-[400px] bg-red-500/15 blur-[150px] rounded-full"
           animate={{
             scale: [1, 1.3, 1],
@@ -37,7 +37,7 @@ export default function JoinTedxSection() {
             ease: "easeInOut"
           }}
         />
-        <motion.div 
+        <motion.div
           className="absolute top-1/2 right-1/4 w-[350px] h-[350px] bg-red-400/10 blur-[120px] rounded-full"
           animate={{
             scale: [1, 1.4, 1],
@@ -49,7 +49,7 @@ export default function JoinTedxSection() {
             ease: "easeInOut"
           }}
         />
-        
+
         {/* Animated grid pattern */}
         <div className="absolute inset-0 opacity-5">
           {[...Array(8)].map((_, i) => (
@@ -80,7 +80,7 @@ export default function JoinTedxSection() {
         transition={{ duration: 0.8, ease: "easeOut" }}
         className="w-full max-w-5xl flex flex-col items-center mb-16 text-center relative"
       >
-        
+
         <h1 className="text-white text-5xl md:text-7xl font-extrabold tracking-tight drop-shadow-2xl mb-4">
           Join <span className="bg-gradient-to-r from-red-500 via-red-600 to-red-500 bg-clip-text text-transparent animate-gradient">TED<sup className="text-2xl md:text-3xl text-red-600">X</sup> VJIT</span>
         </h1>
@@ -109,7 +109,7 @@ export default function JoinTedxSection() {
         transition={{ duration: 0.8, delay: 0.2 }}
         className="w-full max-w-4xl flex flex-col sm:flex-row items-center justify-center gap-6 mb-20"
       >
-        <motion.div 
+        <motion.div
           className="flex items-center gap-4 bg-black/40 backdrop-blur-md px-8 py-5 rounded-2xl shadow-2xl border border-red-500/20 hover:border-red-500/40 transition-all duration-300 group"
           whileHover={{ scale: 1.05, y: -5 }}
           transition={{ type: "spring", stiffness: 300 }}
@@ -124,8 +124,8 @@ export default function JoinTedxSection() {
             </span>
           </div>
         </motion.div>
-        
-        <motion.div 
+
+        <motion.div
           className="flex items-center gap-4 bg-black/40 backdrop-blur-md px-8 py-5 rounded-2xl shadow-2xl border border-red-500/20 hover:border-red-500/40 transition-all duration-300 group"
           whileHover={{ scale: 1.05, y: -5 }}
           transition={{ type: "spring", stiffness: 300 }}
@@ -153,7 +153,7 @@ export default function JoinTedxSection() {
           className="flex flex-col gap-8 w-full"
         >
           {/* Speaker Registration Card */}
-          <motion.div
+          {/* <motion.div
             className="relative bg-gradient-to-br from-red-600/10 via-black/40 to-black/60 backdrop-blur-xl rounded-3xl p-8 border border-red-500/20 overflow-hidden group"
             whileHover={{ scale: 1.02 }}
             transition={{ type: "spring", stiffness: 200 }}
@@ -190,7 +190,7 @@ export default function JoinTedxSection() {
                 </motion.div>
               </motion.button>
             </div>
-          </motion.div>
+          </motion.div> */}
 
           {/* Attendee Registration Card */}
           <motion.div
@@ -199,7 +199,7 @@ export default function JoinTedxSection() {
             transition={{ type: "spring", stiffness: 200 }}
           >
             <div className="absolute inset-0 bg-gradient-to-r from-white/0 via-white/5 to-white/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            
+
             <div className="relative z-10">
               <div className="flex items-start justify-between mb-4">
                 <div className="p-3 bg-white/10 rounded-xl">
@@ -209,15 +209,15 @@ export default function JoinTedxSection() {
                   Limited Seats
                 </span>
               </div>
-              
+
               <h3 className="text-2xl font-bold text-white mb-2">Register as Attendee</h3>
               <p className="text-gray-400 text-sm mb-6 leading-relaxed">
                 Be part of an inspiring community. Experience ideas worth spreading in an unforgettable atmosphere.
               </p>
-              
+
               <motion.button
                 onClick={() => window.open("https://vpulse.campx.in/vpulse/ums/public/form/68c93a448c6af42941ea051b", "_blank")}
-                className="w-full bg-white text-black font-bold py-4 px-6 rounded-xl flex items-center justify-center gap-3 shadow-lg hover:shadow-white/30 transition-all duration-300 group/btn"
+                className="w-full bg-gradient-to-r from-red-600 to-red-700 text-white font-bold py-4 px-6 rounded-xl flex items-center justify-center gap-3 shadow-lg hover:shadow-red-600/50 transition-all duration-300 group/btn"
                 whileHover={{ y: -2 }}
                 whileTap={{ scale: 0.98 }}
               >
@@ -244,7 +244,7 @@ export default function JoinTedxSection() {
           {/* Main persuasive card */}
           <div className="relative bg-gradient-to-br from-red-900/30 via-black/60 to-black/80 backdrop-blur-xl rounded-3xl p-10 shadow-2xl border border-red-800/30 overflow-hidden">
             <div className="absolute top-0 right-0 w-64 h-64 bg-red-600/10 rounded-full blur-3xl" />
-            
+
             <div className="relative z-10">
               <motion.div
                 initial={{ scale: 0.8, opacity: 0 }}
@@ -261,15 +261,15 @@ export default function JoinTedxSection() {
                   <span className="text-red-500 text-5xl">Movement</span>
                 </h2>
               </motion.div>
-              
+
               <p className="text-gray-200 text-base leading-relaxed mb-6">
                 Step into a space where <span className="text-white font-semibold">bold ideas</span>, powerful stories, and meaningful conversations converge to spark <span className="text-red-400 font-semibold">real change</span>.
               </p>
-              
+
               <p className="text-gray-300 text-base leading-relaxed mb-6">
                 At <span className="text-red-500 font-bold">TED<sup className="text-xs">x</sup> VJIT</span>, you become part of a global community driven by curiosity and purpose—whether you're taking the stage or watching from the audience.
               </p>
-                    </div>
+            </div>
           </div>
 
           {/* Urgency Banner */}
@@ -291,13 +291,13 @@ export default function JoinTedxSection() {
                 ease: "linear"
               }}
             />
-            
+
             <div className="relative z-10 flex items-center justify-center gap-3">
-            <div className="flex items-center justify-center gap-6">
-              <p className="text-center text-white font-semibold text-base">
-                <span className="text-yellow-400">Don't miss out!</span> Secure your seat now for an unforgettable experience at TEDˣ VJIT
-              </p>
-            </div>
+              <div className="flex items-center justify-center gap-6">
+                <p className="text-center text-white font-semibold text-base">
+                  <span className="text-yellow-400">Don't miss out!</span> Secure your seat now for an unforgettable experience at TEDˣ VJIT
+                </p>
+              </div>
             </div>
           </motion.div>
         </motion.div>
