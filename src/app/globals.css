@@ -101,6 +101,11 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: 'Inter', sans-serif; /* clean readable for paragraphs */
+  cursor: none; /* Hide default cursor */
+}
+
+body *, body *::before, body *::after {
+  cursor: none !important; /* Hide default cursor on all elements */
 }
 
 h1, h2, h3, h4, h5, h6 {

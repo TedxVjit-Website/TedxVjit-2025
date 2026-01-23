@@ -128,13 +128,13 @@ const structuredData = {
 export default function RootLayout({ children }: RootLayoutProps) {
   return (
     <html lang="en" className={`${inter.variable} ${poppins.variable}`}>
-      <body className="relative min-h-screen flex flex-col bg-gray-900 text-white font-sans overflow-x-hidden cursor-none">
+      <body className="relative min-h-screen flex flex-col bg-gray-900 text-white font-sans overflow-x-hidden">
         <Script
           id="structured-data"
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
-        {/* <CustomCursor /> */}
+        <CustomCursor />
         <Navbar />
         <main className="flex-grow font-[var(--font-inter)]">{children}</main>
         <Footer />
