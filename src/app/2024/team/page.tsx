@@ -152,17 +152,28 @@ export default function TeamsPage() {
     return (
         <div className="min-h-screen bg-gradient-to-br from-gray-900 via-black to-gray-900 my-auto">
             {/* Hero Section */}
-            <motion.section
-                className="relative min-h-screen flex flex-col justify-center py-20 px-4 overflow-hidden"
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true, margin: '-100px' }}
-                variants={heroVariants}
-            >
+            <section className="relative min-h-screen flex flex-col justify-center py-20 px-4 overflow-hidden">
+                {/* Background Image - Static, no animation */}
+                <div 
+                    className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-90"
+                    style={{
+                        backgroundImage: "url('https://ik.imagekit.io/vjlive/TEDx%20VJIT%202025/Core%20Images/sec3-2.png')"
+                    }}
+                />
+                {/* Dark Overlay */}
+                <div className="absolute inset-0 bg-black/60" />
                 <div className="absolute inset-0 bg-gradient-to-r from-red-600/10 to-red-800/10" />
                 <div className="absolute top-0 left-0 w-96 h-96 bg-red-500/5 rounded-full blur-3xl" />
                 <div className="absolute bottom-0 right-0 w-96 h-96 bg-red-500/5 rounded-full blur-3xl" />
-                <div className="relative max-w-7xl mx-auto text-center">
+                
+                {/* Content with animation */}
+                <motion.div 
+                    className="relative max-w-7xl mx-auto text-center"
+                    initial="hidden"
+                    whileInView="visible"
+                    viewport={{ once: true, margin: '-100px' }}
+                    variants={heroVariants}
+                >
                     <h1 className="text-5xl md:text-7xl font-bold text-white mb-4">
                         Meet Our
                         <span className="block text-transparent bg-clip-text bg-gradient-to-r from-red-500 to-red-600">
@@ -170,8 +181,8 @@ export default function TeamsPage() {
                         </span>
                     </h1>
                     <h2 className="text-2xl md:text-3xl font-semibold text-red-400 mb-2">Power of Persistence - 2024</h2>
-                </div>
-            </motion.section>
+                </motion.div>
+            </section>
 
             {/* Core Team Section */}
             <section ref={sectionRef} className="py-2 px-4">

@@ -81,7 +81,7 @@ const sections = {
     { src: "https://ik.imagekit.io/vjlive/TEDx%20VJIT%202025/Core%20Images/WhatsApp%20Image%202026-01-22%20at%2011.47.20.jpeg", alt: "Event Photo 1" },
     { src: "https://ik.imagekit.io/vjlive/TEDx%20VJIT%202025/Core%20Images/WhatsApp%20Image%202026-01-22%20at%2011.47.24.jpeg", alt: "Event Photo 2" },
     { src: "https://ik.imagekit.io/vjlive/TEDx%20VJIT%202025/Core%20Images/WhatsApp%20Image%202026-01-22%20at%2011.47.20%20(1).jpeg", alt: "Event Photo 3" },
-    { src: "https://ik.imagekit.io/vjlive/TEDx%20VJIT%202025/Core%20Images/WhatsApp%20Image%202026-01-22%20at%2011.47.25.jpeg", alt: "Event Photo 4" },
+    { src: "https://ik.imagekit.io/vjlive/TEDx%20VJIT%202025/Core%20Images/WhatsApp%20Image%202026-01-23%20at%2010.03.07.jpeg", alt: "Event Photo 4" },
     { src: "https://ik.imagekit.io/vjlive/TEDx%20VJIT%202025/Core%20Images/WhatsApp%20Image%202026-01-22%20at%2011.47.19.jpeg", alt: "Event Photo 5" },
     { src: "https://ik.imagekit.io/vjlive/TEDx%20VJIT%202025/Core%20Images/WhatsApp%20Image%202026-01-22%20at%2011.54.15.jpeg", alt: "Event Photo 6" },
     { src: "https://ik.imagekit.io/vjlive/TEDx%20VJIT%202025/Core%20Images/464679405_17988238910725134_490165794121894385_n.jpg", alt: "Event Photo 7" },
@@ -127,9 +127,101 @@ const imageHeights = {
 export default function GalleryGrid() {
   const sectionKeys = Object.keys(sections);
   const [activeSection, setActiveSection] = useState(sectionKeys[0]);
+  const [hoveredIndex, setHoveredIndex] = useState(null);
+  const [modalOpen, setModalOpen] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const openModal = (index) => {
+    setCurrentImageIndex(index);
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+  };
+
+  const nextImage = () => {
+    setCurrentImageIndex((prev) => 
+      prev === sections[activeSection].length - 1 ? 0 : prev + 1
+    );
+  };
+
+  const prevImage = () => {
+    setCurrentImageIndex((prev) => 
+      prev === 0 ? sections[activeSection].length - 1 : prev - 1
+    );
+  };
+
+  const handleKeyDown = (e) => {
+    if (!modalOpen) return;
+    if (e.key === 'ArrowRight') nextImage();
+    if (e.key === 'ArrowLeft') prevImage();
+    if (e.key === 'Escape') closeModal();
+  };
 
   return (
     <>
+      {/* Image Modal */}
+      {modalOpen && (
+        <div 
+          className="fixed inset-0 z-[9999] bg-black/95 flex items-center justify-center"
+          onClick={closeModal}
+          onKeyDown={handleKeyDown}
+          tabIndex={0}
+        >
+          {/* Close Button */}
+          <button
+            onClick={closeModal}
+            className="absolute top-4 right-4 md:top-8 md:right-8 text-white text-3xl md:text-4xl hover:text-red-500 transition-colors z-50"
+            aria-label="Close modal"
+          >
+            ×
+          </button>
+
+          {/* Previous Button */}
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              prevImage();
+            }}
+            className="absolute left-2 md:left-8 text-white text-4xl md:text-6xl hover:text-red-500 transition-colors z-50 bg-black/50 rounded-full w-12 h-12 md:w-16 md:h-16 flex items-center justify-center"
+            aria-label="Previous image"
+          >
+            ‹
+          </button>
+
+          {/* Image Container */}
+          <div 
+            className="relative w-[90vw] h-[80vh] md:w-[80vw] md:h-[85vh]"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <Image
+              src={sections[activeSection][currentImageIndex].src}
+              alt={sections[activeSection][currentImageIndex].alt}
+              fill
+              className="object-contain"
+            />
+          </div>
+
+          {/* Next Button */}
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              nextImage();
+            }}
+            className="absolute right-2 md:right-8 text-white text-4xl md:text-6xl hover:text-red-500 transition-colors z-50 bg-black/50 rounded-full w-12 h-12 md:w-16 md:h-16 flex items-center justify-center"
+            aria-label="Next image"
+          >
+            ›
+          </button>
+
+          {/* Image Counter */}
+          <div className="absolute bottom-4 md:bottom-8 left-1/2 -translate-x-1/2 text-white text-sm md:text-base bg-black/50 px-4 py-2 rounded-full">
+            {currentImageIndex + 1} / {sections[activeSection].length}
+          </div>
+        </div>
+      )}
+
       {/* Section Buttons */}
       <div className="flex flex-wrap justify-center gap-4 text-sm text-gray-400 animate-fade-in-delay-2 pb-8">
         {sectionKeys.map((section) => (
@@ -156,17 +248,28 @@ export default function GalleryGrid() {
         <div className="columns-3 md:columns-4 lg:columns-6 gap-4 w-full space-y-4">
           {sections[activeSection].map((img, i) => {
             const height = imageHeights[activeSection][i];
+            const isHovered = hoveredIndex === i;
+            const isSomeHovered = hoveredIndex !== null;
+            
             return (
               <div 
                 key={i} 
-                className="relative break-inside-avoid mb-4"
+                className="relative break-inside-avoid mb-4 transition-all duration-500 ease-in-out cursor-pointer"
+                style={{
+                  transform: isHovered ? 'scale(1.15)' : isSomeHovered ? 'scale(0.92)' : 'scale(1)',
+                  zIndex: isHovered ? 50 : 1,
+                  opacity: isSomeHovered && !isHovered ? 0.7 : 1,
+                }}
+                onMouseEnter={() => setHoveredIndex(i)}
+                onMouseLeave={() => setHoveredIndex(null)}
+                onClick={() => openModal(i)}
               >
                 <div className="relative w-full" style={{ paddingBottom: height }}>
                   <Image
                     src={img.src}
                     alt={img.alt}
                     fill
-                    className="object-cover rounded-xl drop-shadow-lg shadow-red-500 grayscale hover:grayscale-0 transition-all duration-500 hover:scale-105"
+                    className="object-cover rounded-xl drop-shadow-lg shadow-red-500 grayscale md:hover:grayscale-0 transition-all duration-500"
                   />
                 </div>
               </div>

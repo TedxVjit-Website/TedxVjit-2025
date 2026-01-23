@@ -7,6 +7,15 @@ const HeroSection: React.FC = () => {
     <>
       {/* Hero Section */}
       <section className="relative flex items-center justify-center h-screen bg-gradient-to-br from-gray-900 via-black to-red-950 overflow-hidden">
+        {/* Background Image */}
+        <div 
+          className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-60"
+          style={{
+            backgroundImage: "url('https://ik.imagekit.io/vjlive/TEDx%20VJIT%202025/Core%20Images/_DSC7476.ARW.jpg?updatedAt=1769060964133')"
+          }}
+        />
+        {/* Dark Overlay */}
+        <div className="absolute inset-0 bg-black/40" />
         
         <motion.div
           className="absolute text-center px-4"
