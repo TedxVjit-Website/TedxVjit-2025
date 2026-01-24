@@ -3,6 +3,7 @@ import './globals.css'
 import Footer from '../components/Footer'
 import Navbar from '../components/Navbar'
 import CustomCursor from '../components/CustomCursor'
+import SmoothScrolling from '../components/SmoothScrolling'
 import { ReactNode } from 'react'
 import type { Metadata } from 'next'
 import Script from 'next/script'
@@ -134,10 +135,12 @@ export default function RootLayout({ children }: RootLayoutProps) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         />
-        <CustomCursor />
-        <Navbar />
-        <main className="flex-grow font-[var(--font-inter)]">{children}</main>
-        <Footer />
+        <SmoothScrolling>
+          <CustomCursor />
+          <Navbar />
+          <main className="flex-grow font-[var(--font-inter)]">{children}</main>
+          <Footer />
+        </SmoothScrolling>
       </body>
     </html>
   )

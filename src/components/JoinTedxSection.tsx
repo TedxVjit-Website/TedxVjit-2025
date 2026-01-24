@@ -10,14 +10,13 @@ export default function JoinTedxSection() {
       id="join-tedx"
       className="relative w-full min-h-screen bg-gradient-to-b from-black via-red-950/20 to-black py-24 px-6 flex flex-col items-center justify-center overflow-hidden"
     >
-      {/* Enhanced Background Effects */}
-      <div className="absolute inset-0 -z-10">
-        {/* Multiple animated gradient orbs */}
+      {/* Optimized Background Effects */}
+      <div className="absolute inset-0 -z-10 pointer-events-none">
+        {/* Fewer, better-optimized gradient orbs */}
         <motion.div 
-          className="absolute top-20 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-red-600/20 blur-[180px] rounded-full"
+          className="absolute top-20 left-1/2 -translate-x-1/2 w-[400px] h-[400px] bg-red-600/15 blur-[120px] rounded-full will-change-transform"
           animate={{
-            scale: [1, 1.2, 1],
-            opacity: [0.3, 0.5, 0.3],
+            opacity: [0.2, 0.4, 0.2],
           }}
           transition={{
             duration: 8,
@@ -26,10 +25,9 @@ export default function JoinTedxSection() {
           }}
         />
         <motion.div 
-          className="absolute bottom-20 left-1/4 w-[400px] h-[400px] bg-red-500/15 blur-[150px] rounded-full"
+          className="absolute bottom-20 left-1/4 w-[300px] h-[300px] bg-red-500/10 blur-[100px] rounded-full will-change-transform"
           animate={{
-            scale: [1, 1.3, 1],
-            x: [0, 50, 0],
+            x: [0, 30, 0],
           }}
           transition={{
             duration: 10,
@@ -37,39 +35,9 @@ export default function JoinTedxSection() {
             ease: "easeInOut"
           }}
         />
-        <motion.div 
-          className="absolute top-1/2 right-1/4 w-[350px] h-[350px] bg-red-400/10 blur-[120px] rounded-full"
-          animate={{
-            scale: [1, 1.4, 1],
-            y: [0, -50, 0],
-          }}
-          transition={{
-            duration: 12,
-            repeat: Infinity,
-            ease: "easeInOut"
-          }}
-        />
         
-        {/* Animated grid pattern */}
-        <div className="absolute inset-0 opacity-5">
-          {[...Array(8)].map((_, i) => (
-            <motion.div
-              key={i}
-              className="absolute h-px bg-gradient-to-r from-transparent via-red-500 to-transparent"
-              style={{ top: `${i * 12.5}%`, width: '100%' }}
-              animate={{
-                opacity: [0.1, 0.3, 0.1],
-                scaleX: [0.8, 1, 0.8],
-              }}
-              transition={{
-                duration: 3,
-                repeat: Infinity,
-                delay: i * 0.2,
-                ease: 'easeInOut'
-              }}
-            />
-          ))}
-        </div>
+        {/* Static grid pattern for better performance */}
+        <div className="absolute inset-0 opacity-[0.03] bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:40px_40px]"></div>
       </div>
 
       {/* Heading with enhanced styling */}

@@ -1,8 +1,8 @@
-// Updated responsive version of SpeakerCard with max-width
+// Updated responsive version of SpeakerCard - Optimized for performance
 'use client'
 
-import React, { useState } from 'react'
-import { FaLinkedin, FaInstagram, FaTwitter, FaGlobe } from 'react-icons/fa';
+import React, { useState, useEffect } from 'react'
+import { FaLinkedin, FaInstagram, FaTwitter, FaGlobe } from 'react-icons/fa'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 
@@ -26,57 +26,29 @@ interface SpeakerCardProps {
 }
 
 export default function SpeakerCard({ speaker }: SpeakerCardProps) {
-  const [active, setActive] = useState(false);
-  const [hovered, setHovered] = useState(false);
-  const [device, setDevice] = useState<'mobile' | 'tablet' | 'desktop'>('desktop');
-  const [mounted, setMounted] = useState(false);
+  const [active, setActive] = useState(false)
+  const [hovered, setHovered] = useState(false)
+  const [mounted, setMounted] = useState(false)
 
-  React.useEffect(() => {
-    setMounted(true);
-    const checkDevice = () => {
-      if (window.innerWidth < 640) setDevice('mobile');
-      else if (window.innerWidth < 1024) setDevice('tablet');
-      else setDevice('desktop');
-    };
-    checkDevice();
-    window.addEventListener('resize', checkDevice);
-    return () => window.removeEventListener('resize', checkDevice);
-  }, []);
+  useEffect(() => {
+    setMounted(true)
+  }, [])
 
   const handleCardClick = () => {
-    if (mounted && window.innerWidth < 768) setActive(prev => !prev);
-  };
-
-  // Responsive values
-  let imgSize = 170, imgClass = 'w-36 h-36', circleClass = 'w-36 h-36 top-8', yOffset = -12;
-  let nameClass = 'text-[1.1rem]';
-  let titleClass = 'text-[0.95rem]';
-  let companyClass = 'text-xs';
-  let iconClass = 'text-lg';
-
-  if (mounted) {
-    if (device === 'mobile') {
-      imgSize = 128;
-      imgClass = 'w-32 h-32';
-      circleClass = 'w-32 h-32 top-4';
-      yOffset = -6;
-      nameClass = 'text-[1.1rem]';
-      titleClass = 'text-[0.9rem]';
-      iconClass = 'text-base';
-    } else if (device === 'tablet') {
-      imgSize = 140;
-      imgClass = 'w-32 h-32';
-      circleClass = 'w-32 h-32 top-6';
-      yOffset = -8;
-      nameClass = 'text-[1.15rem]';
-      titleClass = 'text-[1rem]';
-      iconClass = 'text-[1.1rem]';
+    if (mounted && window.innerWidth < 768) {
+      setActive(prev => !prev)
     }
+  }
+
+  if (!mounted) {
+    return (
+      <div className="w-full max-w-[260px] sm:max-w-[300px] h-[260px] sm:h-[300px] bg-gray-900 animate-pulse rounded-2xl" />
+    )
   }
 
   return (
     <div
-      className={`rounded-2xl overflow-hidden flex flex-col justify-end relative group border border-gray-700/50 hover:border-red-500/50 transition-all duration-300 w-full max-w-[260px] sm:max-w-[300px] md:max-w-[340px] h-[260px] sm:h-[300px] md:h-[340px] cursor-pointer bg-transparent ${active ? 'active' : ''}`}
+      className={`rounded-2xl overflow-hidden flex flex-col justify-end relative group border border-gray-700/50 hover:border-red-500/50 transition-all duration-300 w-full max-w-[260px] sm:max-w-[300px] md:max-w-[340px] h-[260px] sm:h-[300px] md:h-[340px] cursor-pointer bg-black/40 ${active ? 'active' : ''}`}
       onClick={handleCardClick}
       onMouseEnter={() => setHovered(true)}
       onMouseLeave={() => setHovered(false)}
@@ -85,44 +57,51 @@ export default function SpeakerCard({ speaker }: SpeakerCardProps) {
         src={speaker.image}
         alt={speaker.name}
         fill
-        className={`object-cover absolute inset-0 z-0 transition-all duration-300 grayscale ${active || hovered ? 'opacity-0' : 'opacity-100'}`}
+        sizes="(max-width: 768px) 300px, 400px"
+        className={`object-cover absolute inset-0 z-0 transition-opacity duration-500 grayscale ${active || hovered ? 'opacity-0' : 'opacity-100'}`}
+        priority={speaker.id <= 3}
       />
 
-      {/* Expanding Circle Image */}
+      {/* Expanding Circle Image - Optimized scaling */}
       <div
-        className={`absolute left-1/2 -translate-x-1/2 ${circleClass} z-10 rounded-full overflow-hidden border-4 border-red-500 transition-all duration-500 ${active || hovered ? 'opacity-100 scale-100' : 'opacity-0 scale-0'}`}
-        style={{ pointerEvents: 'none' }}
+        className={`absolute left-1/2 -translate-x-1/2 top-4 sm:top-8 z-10 rounded-full overflow-hidden border-4 border-red-500 transition-all duration-500 will-change-transform ${
+          active || hovered ? 'opacity-100 scale-100' : 'opacity-0 scale-50'
+        } w-24 h-24 sm:w-32 sm:h-32 md:w-36 md:h-36`}
       >
         <Image
           src={speaker.image}
           alt={speaker.name}
-          width={imgSize}
-          height={imgSize}
-          className={`object-cover rounded-full ${imgClass} ${!(active || hovered) ? 'grayscale' : ''}`}
+          width={200}
+          height={200}
+          className="object-cover w-full h-full"
         />
       </div>
 
-      {/* Text */}
-      <div className="relative z-10 px-3 py-3 sm:py-4 flex flex-col items-start min-h-[80px]">
-        <div className="absolute inset-x-0 bottom-0 h-[80px] bg-black/80 rounded-b-2xl"></div>
+      {/* Text Content */}
+      <div className="relative z-10 px-3 py-3 sm:py-4 flex flex-col items-center">
+        {/* Shadow Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-t from-black via-black/80 to-transparent -z-10 rounded-b-2xl"></div>
 
         <motion.div
-          className={`relative z-10 w-full flex flex-col ${active || hovered ? 'items-center' : 'items-start'}`}
-          initial={false}
-          animate={{ y: active || hovered ? yOffset : 0 }}
-          transition={{ type: 'spring', stiffness: 80, damping: 18 }}
+          className="relative z-10 w-full flex flex-col items-center"
+          animate={{ y: active || hovered ? -10 : 0 }}
+          transition={{ type: 'spring', stiffness: 100, damping: 20 }}
         >
-          <motion.h3 className={`${nameClass} font-bold text-red-500 mb-1 truncate w-full text-center`} layout>
+          <h3 className="text-base sm:text-lg md:text-xl font-bold text-red-500 mb-0.5 truncate w-full text-center">
             {speaker.name}
-          </motion.h3>
+          </h3>
 
-          <motion.p className={`${titleClass} text-white font-semibold mb-1 truncate w-full text-center`} layout>
+          <p className="text-xs sm:text-sm md:text-base text-white font-medium mb-1 truncate w-full text-center">
             {speaker.title}
-          </motion.p>
+          </p>
         </motion.div>
 
-        {(hovered || active) && (
-          <div className={`relative z-10 flex flex-row gap-4 w-full justify-center mt-2 ${iconClass}`}>
+        {mounted && (hovered || active) && (
+          <motion.div 
+            initial={{ opacity: 0, y: 10 }}
+            animate={{ opacity: 1, y: 0 }}
+            className="flex flex-row gap-4 w-full justify-center mt-2 text-lg sm:text-xl text-white"
+          >
             {speaker.social?.linkedin && speaker.social.linkedin !== '#' && (
               <a href={speaker.social.linkedin} target="_blank" rel="noopener noreferrer" className="hover:text-red-500 transition-colors">
                 <FaLinkedin />
@@ -138,14 +117,10 @@ export default function SpeakerCard({ speaker }: SpeakerCardProps) {
                 <FaTwitter />
               </a>
             )}
-            {speaker.social?.website && speaker.social.website !== '#' && (
-              <a href={speaker.social.website} target="_blank" rel="noopener noreferrer" className="hover:text-red-500 transition-colors">
-                <FaGlobe />
-              </a>
-            )}
-          </div>
+          </motion.div>
         )}
       </div>
     </div>
-  );
+  )
 }
+
