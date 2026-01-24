@@ -10,7 +10,7 @@ export default function SpeakersPage() {
     {
       id: 1,
       name: 'Varenya Borbora',
-      title: 'Storyteller',
+      title: 'Content Creation',
       company: '',
       image: 'https://ik.imagekit.io/w8o6876wf/Tedx-Vjit-Speakers/Varenya.jpeg',
       bio: 'A storyteller who communicates ideas through emotion and visual creativity.',
@@ -28,7 +28,7 @@ export default function SpeakersPage() {
     {
       id: 2,
       name: 'Sri Satya Gaura Chandra Dasa',
-      title: 'Spiritual Mentor',
+      title: 'Spirituality',
       company: '',
       image: 'https://ik.imagekit.io/w8o6876wf/Tedx-Vjit-Speakers/Sathya%20Gaura%20Chandra%20Das.jpeg',
       bio: 'Simplifies Vedic wisdom into practical, modern-day guidance.',
@@ -46,7 +46,7 @@ export default function SpeakersPage() {
     {
       id: 3,
       name: 'Aishwarya T V Pillai',
-      title: 'Accessibility Innovator',
+      title: 'Founder/ Entrepreneur',
       company: 'Grailmaker / Spacefelt',
       image: 'https://ik.imagekit.io/vjlive/TEDx%20VJIT%202025/Speakers/1686123857520.jpg',
       bio: 'Creates inclusive tech solutions for visually impaired communities.',
@@ -64,7 +64,7 @@ export default function SpeakersPage() {
     {
       id: 4,
       name: 'Vishnu Vijayan',
-      title: 'AI Educator',
+      title: 'Content Creation',
       company: '',
       image: 'https://ik.imagekit.io/vjlive/TEDx%20VJIT%202025/Speakers/1748492332778.jpg',
       bio: 'Explains AI through simple stories, memes, and analogies.',
@@ -82,7 +82,7 @@ export default function SpeakersPage() {
     {
       id: 5,
       name: 'Prathamesh Sinha',
-      title: 'Social Innovator',
+      title: 'Brand Ambassador',
       company: 'Thinkerbell Labs',
       image: 'https://ik.imagekit.io/vjlive/TEDx%20VJIT%202025/Speakers/607368965_18084775550027583_3347693349190696838_n.jpg',
       bio: '',
@@ -100,7 +100,7 @@ export default function SpeakersPage() {
     {
       id: 6,
       name: 'Harshal Maniyar',
-      title: 'Product Leader',
+      title: 'Product Director/ Entrepreneur',
       company: 'Amber',
       image: 'https://ik.imagekit.io/vjlive/TEDx%20VJIT%202025/Speakers/WhatsApp%20Image%202026-01-07%20at%2023.03.21.jpeg',
       bio: 'Builds AI-powered products focused on human-centered innovation.',
@@ -118,7 +118,7 @@ export default function SpeakersPage() {
     {
       id: 7,
       name: 'Major Mohd Ali Shah',
-      title: 'Motivational Speaker',
+      title: 'Entertainment/ Miltary',
       company: '',
       image: 'https://ik.imagekit.io/vjlive/TEDx%20VJIT%202025/Speakers/Mohammed_Ali_Shah%20(1).png',
       bio: 'One of the world’s most featured TEDx speakers and leadership mentor.',
@@ -136,7 +136,7 @@ export default function SpeakersPage() {
     {
       id: 8,
       name: 'Jeet Basak',
-      title: 'Independent Music Artist',
+      title: ' Singer',
       company: 'Snapchat',
       image: 'https://ik.imagekit.io/vjlive/TEDx%20VJIT%202025/Speakers/1721453020191.jpg',
       bio: 'Shapes how communities connect through digital culture and storytelling.',
@@ -154,7 +154,7 @@ export default function SpeakersPage() {
     {
       id: 9,
       name: 'Ananya Lohan',
-      title: 'AI Researcher',
+      title: 'Research',
       company: 'Athena.AI',
       image: 'https://ik.imagekit.io/w8o6876wf/Tedx-Vjit-Speakers/Ananya.jpeg',
       bio: 'Young researcher inspiring students through AI and STEM.',
@@ -172,7 +172,7 @@ export default function SpeakersPage() {
     {
       id: 10,
       name: 'BK Sumalatha',
-      title: 'Spiritual Mentor',
+      title: 'Spirituality',
       company: 'Spiritual Mentor',
       image: 'https://ik.imagekit.io/vjlive/TEDx%20VJIT%202025/Speakers/hq720.jpg',
       bio: 'Spiritual mentor known for expertise in Rajyoga and inner growth.',
@@ -190,7 +190,7 @@ export default function SpeakersPage() {
     {
       id: 11,
       name: 'Pradeep Kondiparthi',
-      title: 'Actor & Motivational Speaker',
+      title: 'Entertainment',
       company: 'Telugu Film Industry',
       image: 'https://ik.imagekit.io/vjlive/TEDx%20VJIT%202025/Speakers/pradeep-kondiparthi.jpg',
       bio: 'Renowned actor known for versatile roles in Telugu cinema and television.',
