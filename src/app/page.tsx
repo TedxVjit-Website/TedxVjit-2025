@@ -1,106 +1,65 @@
 "use client"
 
-import { useEffect, useState } from "react"
-import { AnimatePresence } from "framer-motion"
-import dynamic from "next/dynamic"
+import dynamic from 'next/dynamic'
+import { useEffect, useState } from 'react'
+import { AnimatePresence } from 'framer-motion'
+import Hero from '../components/Hero'
+import AboutSection from '../components/AboutSection'
+import SpeakersPreview from '../components/SpeakersPreview'
+import LoadingScreen from '../components/LoadingScreen'
 
-// 🔹 Dynamic imports (preloadable)
-const Hero = dynamic(() => import("../components/Hero"), { ssr: false })
-const AboutSection = dynamic(() => import("../components/AboutSection"))
-const SpeakersPreview = dynamic(() => import("../components/SpeakersPreview"))
-const SchedulePreview = dynamic(() => import("../components/SchedulePreview"))
-const PreviousPreview = dynamic(() => import("../components/PreviousPreview"))
-const CountdownPreview = dynamic(() => import("@/components/CountdownPreview"))
-const SponsorsPreview = dynamic(() => import("@/components/SponsorsPreview"))
-const MapSection = dynamic(() => import("@/components/MapSection"))
-const JoinTedxSection = dynamic(() => import("../components/JoinTedxSection"))
-
-import InstagramModal from "../components/InstagramModal"
-import LoadingScreen from "../components/LoadingScreen"
+// Dynamic imports only for sections far below the fold
+const SchedulePreview = dynamic(() => import('../components/SchedulePreview'), { ssr: false })
+const PreviousPreview = dynamic(() => import('../components/PreviousPreview'), { ssr: false })
+const CountdownPreview = dynamic(() => import('@/components/CountdownPreview'), { ssr: false })
+const JoinTedxSection = dynamic(() => import('../components/JoinTedxSection'), { ssr: false })
+const SponsorsPreview = dynamic(() => import('@/components/SponsorsPreview'), { ssr: false })
+const MapSection = dynamic(() => import('@/components/MapSection'), { ssr: false })
+const InstagramModal = dynamic(() => import('../components/InstagramModal'), { ssr: false })
 
 export default function Home() {
-  const [isLoading, setIsLoading] = useState(true)
   const [showModal, setShowModal] = useState(false)
+  const [isLoading, setIsLoading] = useState(true)
 
   useEffect(() => {
-    let mounted = true
+    // Reveal site faster to avoid scroll-stutter during hydration
+    const timer = setTimeout(() => {
+      setIsLoading(false)
+    }, 800)
 
-    const preloadApp = async () => {
-      /* -------------------------------------------
-         1️⃣ Preload critical components
-      ------------------------------------------- */
-      await Promise.all([
-        import("../components/Hero"),
-        import("../components/AboutSection"),
-        import("../components/SpeakersPreview"),
-        import("../components/SchedulePreview"),
-      ])
-
-      /* -------------------------------------------
-         2️⃣ Preload critical images
-      ------------------------------------------- */
-      const images = [
-        "https://ik.imagekit.io/vjlive/TEDx%20VJIT%202025/Core%20Images/G-images-2.JPG?updatedAt=1759593304566",
-      ]
-
-      await Promise.all(
-        images.map(
-          src =>
-            new Promise(resolve => {
-              const img = new Image()
-              img.src = src
-              img.onload = resolve
-              img.onerror = resolve
-            })
-        )
-      )
-
-      /* -------------------------------------------
-         3️⃣ Minimum loader duration (UX)
-      ------------------------------------------- */
-      await new Promise(res => setTimeout(res, 1000))
-
-      if (mounted) setIsLoading(false)
+    if (typeof window !== 'undefined') {
+      const params = new URLSearchParams(window.location.search)
+      if (params.get('source') === 'card') {
+        setShowModal(true)
+      }
     }
 
-    preloadApp()
-
-    return () => {
-      mounted = false
-    }
+    return () => clearTimeout(timer)
   }, [])
 
   return (
     <>
-      {/* 🔴 LOADING SCREEN */}
       <AnimatePresence mode="wait">
         {isLoading && <LoadingScreen key="loading" />}
       </AnimatePresence>
-
-      {/* 🟢 MAIN CONTENT */}
-      {!isLoading && (
-        <>
-          <InstagramModal
-            open={showModal}
-            onClose={() => setShowModal(false)}
-          />
-
-          {/* Above-the-fold */}
-          <Hero />
+      
+      <div className={isLoading ? 'fixed inset-0 overflow-hidden' : 'visible'}>
+        <InstagramModal open={showModal} onClose={() => setShowModal(false)} />
+        <Hero />
+        
+        {/* AboutSection and SpeakersPreview are now pre-mounted to prevent scrolling pauses */}
+        <div className="relative">
           <AboutSection />
-
-          {/* Mid sections */}
           <SpeakersPreview />
+          
           <SchedulePreview />
           <PreviousPreview />
-
-          {/* Below-the-fold */}
           <CountdownPreview />
           <JoinTedxSection />
           <SponsorsPreview />
           <MapSection />
-        </>
-      )}
+        </div>
+      </div>
     </>
   )
 }
