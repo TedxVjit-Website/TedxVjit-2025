@@ -37,6 +37,21 @@ export default function Home() {
     return () => clearTimeout(timer)
   }, [])
 
+  // Smooth scroll to #join-tedx after loading and mount
+  useEffect(() => {
+    if (!isLoading && typeof window !== 'undefined') {
+      if (window.location.hash === '#join-tedx') {
+        // Wait for dynamic section to mount
+        setTimeout(() => {
+          const el = document.getElementById('join-tedx');
+          if (el) {
+            el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        }, 100); // slight delay to ensure mount
+      }
+    }
+  }, [isLoading]);
+
   return (
     <>
       <AnimatePresence mode="wait">
