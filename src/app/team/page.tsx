@@ -50,6 +50,7 @@ export default function TeamsPage() {
             { id: 11, name: "Dr. C. N. Ravi", title: "HoD - EEE", company: "VJIT", image: "https://ik.imagekit.io/bixqi9iwy/c.n.raju_.jpg", bio: "", description: "", expertise: [], social: { linkedin: "#", instagram: "", twitter: "", website: "" } },
             { id: 12, name: "Dr. N. Sudharsan", title: "HoD - Civil", company: "VJIT", image: "https://ik.imagekit.io/bixqi9iwy/civil-dept.-hod.jpg", bio: "", description: "", expertise: [], social: { linkedin: "#", instagram: "", twitter: "", website: "" } },
             { id: 13, name: "Dr. G Sreeram Reddy", title: "HoD - Mech", company: "VJIT", image: "https://ik.imagekit.io/bixqi9iwy/sreeramreddy.jpg", bio: "", description: "", expertise: [], social: { linkedin: "#", instagram: "", twitter: "", website: "" } },
+            { id: 14, name: "Dr. P. Chakradhar", title: "HoD - MBA", company: "VJIT", image: "https://ik.imagekit.io/vjlive/TEDx%20VJIT%202025/Core%20Team/chakradhar.jpg", bio: "", description: "", expertise: [], social: { linkedin: "", instagram: "", twitter: "", website: "" } },
         ],
         Organising: [
             { id: 14, name: "Keerthana", title: "Licensee", company: "VJIT", image: "https://ik.imagekit.io/vjlive/TEDx%20VJIT%202025/Organizing/20250927_171839.jpg?updatedAt=1759343102363", bio: "", description: "", expertise: [], social: { linkedin: "https://www.linkedin.com/in/sai-keerthana-kurapati-15841b24a/", instagram: "", twitter: "", website: "" } },
