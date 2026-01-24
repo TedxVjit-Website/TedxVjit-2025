@@ -120,45 +120,6 @@ export default function JoinTedxSection() {
           transition={{ duration: 0.8, delay: 0.4 }}
           className="flex flex-col gap-8 w-full"
         >
-          {/* Speaker Registration Card */}
-          <motion.div
-            className="relative bg-gradient-to-br from-red-600/10 via-black/40 to-black/60 backdrop-blur-xl rounded-3xl p-8 border border-red-500/20 overflow-hidden group"
-            whileHover={{ scale: 1.02 }}
-            transition={{ type: "spring", stiffness: 200 }}
-          >
-            <div className="absolute inset-0 bg-gradient-to-r from-red-600/0 via-red-600/10 to-red-600/0 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-            
-            <div className="relative z-10">
-              <div className="flex items-start justify-between mb-4">
-                <div className="p-3 bg-red-600/20 rounded-xl">
-                  <Mic className="text-red-400 w-7 h-7" />
-                </div>
-                <span className="text-xs text-red-400 font-semibold px-3 py-1 bg-red-600/20 rounded-full">
-                  Open Now
-                </span>
-              </div>
-              
-              <h3 className="text-2xl font-bold text-white mb-2">Register as Speaker</h3>
-              <p className="text-gray-400 text-sm mb-6 leading-relaxed">
-                Share your transformative story with the TEDˣ community. Inspire hundreds with your unique perspective.
-              </p>
-              
-              <motion.button
-                onClick={() => window.open("https://forms.gle/FWnPXLSi6E2PZuT47", "_blank")}
-                className="w-full bg-gradient-to-r from-red-600 to-red-700 text-white font-bold py-4 px-6 rounded-xl flex items-center justify-center gap-3 shadow-lg hover:shadow-red-600/50 transition-all duration-300 group/btn"
-                whileHover={{ y: -2 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                <span className="text-base">Apply to Speak</span>
-                <motion.div
-                  animate={{ x: [0, 5, 0] }}
-                  transition={{ duration: 1.5, repeat: Infinity }}
-                >
-                  <ArrowRight className="w-5 h-5" />
-                </motion.div>
-              </motion.button>
-            </div>
-          </motion.div>
 
           {/* Attendee Registration Card */}
           <motion.div

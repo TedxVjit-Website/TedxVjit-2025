@@ -192,22 +192,6 @@ export default function Navbar() {
                     <div className="text-xs text-gray-400">Join as an attendee</div>
                   </div>
                 </Link>
-
-                <Link
-                  href="https://docs.google.com/forms/d/e/1FAIpQLSd_XTYzOb5QbG7ZmtZWCrAPeyCR-mJQflKzSdgs0x5SGonWJw/viewform"
-                  onClick={() => setDropdownOpen(false)}
-                  className=" flex items-center px-4 py-3 text-white hover:bg-red-600/20 rounded-lg group"
-                >
-                  <div className=" w-8 h-8 bg-red-500/20 rounded-full flex items-center justify-center mr-3 group-hover:bg-red-500/40">
-                    <svg className="w-4 h-4 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.543 12.674a1 1 0 000 1.652l5.914 3.674a1 1 0 001.543-.868V8.738a1 1 0 00-1.543-.868l-5.914 3.674a1 1 0 000 1.652z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <div className="font-semibold">Register as Speaker</div>
-                    <div className="text-xs text-gray-400">Share your ideas</div>
-                  </div>
-                </Link>
               </motion.div>
             )}
           </AnimatePresence>
@@ -323,22 +307,6 @@ export default function Navbar() {
                   <div>
                     <div className="font-semibold">Register as Audience</div>
                     <div className="text-xs text-gray-400">Join as an attendee</div>
-                  </div>
-                </Link>
-
-                <Link
-                  href="https://docs.google.com/forms/d/e/1FAIpQLSd_XTYzOb5QbG7ZmtZWCrAPeyCR-mJQflKzSdgs0x5SGonWJw/viewform"
-                  onClick={() => setMenuOpen(false)}
-                  className="flex items-center px-0 py-3 text-white hover:bg-red-600/20 rounded-lg group  transition-all duration-300"
-                >
-                  <div className="w-8 h-8 bg-red-500/20 rounded-full flex items-center justify-center mr-3 group-hover:bg-red-500/40">
-                    <svg className="w-4 h-4 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.543 12.674a1 1 0 000 1.652l5.914 3.674a1 1 0 001.543-.868V8.738a1 1 0 00-1.543-.868l-5.914 3.674a1 1 0 000 1.652z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <div className="font-semibold">Register as Speaker</div>
-                    <div className="text-xs text-gray-400">Share your ideas</div>
                   </div>
                 </Link>
               </div>
