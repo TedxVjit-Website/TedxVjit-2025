@@ -60,8 +60,7 @@ const CountdownPreview = () => {
         {/* Animated Button */}
         <motion.button
           onClick={() => {
-            const section = document.getElementById('join-tedx')
-            if (section) section.scrollIntoView({ behavior: 'smooth' })
+            window.open('https://vpulse.campx.in/vpulse/ums/public/form/68c93a448c6af42941ea051b', '_blank')
           }}
           className="relative flex items-center justify-center font-semibold text-white rounded-[0.9em] overflow-hidden cursor-pointer
             bg-red-600 px-[1.2em] pr-[3em] py-[0.35em] h-[2.8em] min-w-[150px] sm:min-w-[200px]

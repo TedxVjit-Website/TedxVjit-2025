@@ -243,8 +243,7 @@ export default function Hero() {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.96 }}
             onClick={() => {
-              const section = document.getElementById('join-tedx')
-              if (section) section.scrollIntoView({ behavior: 'smooth' })
+              window.open('https://vpulse.campx.in/vpulse/ums/public/form/68c93a448c6af42941ea051b', '_blank')
             }}
           >
             <span className="relative z-10">
