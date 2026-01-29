@@ -215,7 +215,7 @@ export default function SpeakersPage() {
   }
 
   const handleRegisterClick = () => {
-    router.push('/#join-tedx')
+    window.open('https://vpulse.campx.in/vpulse/ums/public/form/68c93a448c6af42941ea051b', '_blank')
   }
 
   return (
