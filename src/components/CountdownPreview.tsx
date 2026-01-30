@@ -34,7 +34,7 @@ const CountdownPreview = () => {
         className="text-center"
       >
         <AnimatedNumberCountdown
-          endDate={new Date("2026-01-31T00:00:00")}
+          endDate={new Date("2026-01-31T09:00:00")}
           className="my-4 text-white text-6xl md:text-7xl font-extrabold gap-8"
         />
       </motion.div>
