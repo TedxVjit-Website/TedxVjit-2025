@@ -187,23 +187,23 @@ export default function SpeakersPage() {
       }
     },
 
-    {
-      id: 11,
-      name: 'Pradeep Kondiparthi',
-      title: 'Entertainment',
-      company: 'Telugu Film Industry',
-      image: 'https://ik.imagekit.io/vjlive/TEDx%20VJIT%202025/Speakers/pradeep-kondiparthi.jpg',
-      bio: 'Renowned actor known for versatile roles in Telugu cinema and television.',
-      description:
-        'Pradeep Kondiparthi is a renowned actor in the Telugu film industry, known for his versatile roles in cinema and television. With a career spanning several decades, he has captivated audiences with his compelling performances and dedication to the craft of acting.',
-      expertise: ['Acting', 'Theatre', 'Film and Television'],
-      social: {
-          linkedin: '#',
-          instagram: 'https://www.instagram.com/pradeepkondiparthi?igsh=dXJmM2puZGYyc3dn',
-          twitter: '#',
-          website: '#'
-      }
-    }
+    // {
+    //   id: 11,
+    //   name: 'Pradeep Kondiparthi',
+    //   title: 'Entertainment',
+    //   company: 'Telugu Film Industry',
+    //   image: 'https://ik.imagekit.io/vjlive/TEDx%20VJIT%202025/Speakers/pradeep-kondiparthi.jpg',
+    //   bio: 'Renowned actor known for versatile roles in Telugu cinema and television.',
+    //   description:
+    //     'Pradeep Kondiparthi is a renowned actor in the Telugu film industry, known for his versatile roles in cinema and television. With a career spanning several decades, he has captivated audiences with his compelling performances and dedication to the craft of acting.',
+    //   expertise: ['Acting', 'Theatre', 'Film and Television'],
+    //   social: {
+    //       linkedin: '#',
+    //       instagram: 'https://www.instagram.com/pradeepkondiparthi?igsh=dXJmM2puZGYyc3dn',
+    //       twitter: '#',
+    //       website: '#'
+    //   }
+    // }
   ];
 
 
