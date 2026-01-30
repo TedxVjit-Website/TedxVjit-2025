@@ -150,51 +150,13 @@ export default function Navbar() {
           className="relative hidden xl:block ml-4"
         >
           <button
-            onClick={() => setDropdownOpen(!dropdownOpen)}
-            className="px-5 py-2.5 rounded-full text-sm font-semibold transition-transform duration-300
-             bg-red-600 text-white shadow-md hover:scale-105 hover:shadow-red-600/40 flex items-center gap-2"
+            disabled
+            className="px-5 py-2.5 rounded-full text-sm font-semibold bg-gray-600/50 text-gray-200 shadow-md cursor-not-allowed flex items-center gap-2"
           >
-            Register Now
-            <motion.svg
-              animate={{ rotate: dropdownOpen ? 180 : 0 }}
-              transition={{ duration: 0.3 }}
-              className="w-4 h-4"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-            </motion.svg>
+            Registrations Closed
           </button>
 
-          <AnimatePresence>
-            {dropdownOpen && (
-              <motion.div
-                initial={{ opacity: 0, y: -10 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                transition={{ duration: 0.2 }}
-                className="absolute right-0 mt-2 w-64 bg-black/30 backdrop-blur-xl rounded-xl p-3 shadow-lg border border-white/10 space-y-2 z-50"
-              >
-
-                <Link
-                  href="https://vpulse.campx.in/vpulse/ums/public/form/68c93a448c6af42941ea051b"
-                  onClick={() => setDropdownOpen(false)}
-                  className="flex items-center px-4 py-3 text-white hover:bg-red-600/20 rounded-lg group"
-                >
-                  <div className="w-8 h-8 bg-red-500/20 rounded-full flex items-center justify-center mr-3 group-hover:bg-red-500/40">
-                    <svg className="w-4 h-4 text-red-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <div className="font-semibold">Register as Audience</div>
-                    <div className="text-xs text-gray-400">Join as an attendee</div>
-                  </div>
-                </Link>
-              </motion.div>
-            )}
-          </AnimatePresence>
+          {/* Dropdown disabled as registrations are closed */}
         </motion.div>
 
         <motion.div

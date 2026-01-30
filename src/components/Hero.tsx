@@ -238,18 +238,7 @@ export default function Hero() {
             </span>
           </motion.button>
 
-          <motion.button
-            className="relative px-4 sm:px-8 md:px-10 py-3 sm:py-3.5 md:py-4 text-xs sm:text-sm md:text-base lg:text-lg font-semibold text-black bg-white rounded-full overflow-hidden group shadow-lg shadow-white/10 flex-1 sm:flex-none"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.96 }}
-            onClick={() => {
-              window.open('https://vpulse.campx.in/vpulse/ums/public/form/68c93a448c6af42941ea051b', '_blank')
-            }}
-          >
-            <span className="relative z-10">
-              Get Tickets
-            </span>
-          </motion.button>
+          {/* Ticket purchasing disabled as registrations are closed */}
         </motion.div>
 
         {/* Scroll Indicator */}

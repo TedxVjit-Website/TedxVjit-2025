@@ -34,7 +34,7 @@ const CountdownPreview = () => {
         className="text-center"
       >
         <AnimatedNumberCountdown
-          endDate={new Date("2026-01-31T00:00:00")}
+          endDate={new Date("2026-01-31T09:00:00")}
           className="my-4 text-white text-6xl md:text-7xl font-extrabold gap-8"
         />
       </motion.div>
@@ -57,41 +57,13 @@ const CountdownPreview = () => {
           <span className="text-lg font-semibold text-white">31st January 2026</span>
         </Badge>
 
-        {/* Animated Button */}
-        <motion.button
-          onClick={() => {
-            window.open('https://vpulse.campx.in/vpulse/ums/public/form/68c93a448c6af42941ea051b', '_blank')
-          }}
-          className="relative flex items-center justify-center font-semibold text-white rounded-[0.9em] overflow-hidden cursor-pointer
-            bg-red-600 px-[1.2em] pr-[3em] py-[0.35em] h-[2.8em] min-w-[150px] sm:min-w-[200px]
-            shadow-lg hover:shadow-red-500/50 hover:scale-105 transition-all duration-300"
-          initial="initial"
-          animate="initial"
-          whileHover="hovered"
-          whileTap={{ scale: 0.96 }}
+        {/* Disabled CTA as registrations are closed */}
+        <button
+          disabled
+          className="relative flex items-center justify-center font-semibold text-gray-200 rounded-[0.9em] bg-gray-600/60 px-[1.2em] py-[0.35em] h-[2.8em] min-w-[180px] shadow-md cursor-not-allowed"
         >
-          <motion.span
-            className="relative z-10 text-sm sm:text-base"
-            variants={{
-              initial: { opacity: 1 },
-              hovered: { opacity: 0 },
-            }}
-            transition={{ duration: 0.28, ease: 'easeInOut' }}
-          >
-            Book Your Ticket Now
-          </motion.span>
-
-          <motion.div
-            className="absolute top-0 right-0 h-full flex items-center justify-center bg-red-600 rounded-[0.9em]"
-            variants={{
-              initial: { width: 44 },
-              hovered: { width: '100%' },
-            }}
-            transition={{ duration: 0.28, ease: 'easeInOut' }}
-          >
-            <ArrowRight className="text-white w-5 h-5 sm:w-6 sm:h-6" />
-          </motion.div>
-        </motion.button>
+          Registrations are closed
+        </button>
       </motion.div>
     </section>
   );
