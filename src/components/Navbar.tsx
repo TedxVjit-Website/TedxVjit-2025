@@ -256,21 +256,17 @@ export default function Navbar() {
               </div>
 
               <div className="space-y-2">
-                <Link
-                  href="https://vpulse.campx.in/vpulse/ums/public/form/68c93a448c6af42941ea051b"
-                  onClick={() => setMenuOpen(false)}
-                  className="flex items-center px-0 py-2 text-white hover:bg-red-600/20 rounded-lg group transition-all duration-300"
-                >
-                  <div className=" w-8 h-8 bg-red-500/20 rounded-full flex items-center justify-center mr-3 group-hover:bg-red-500/40">
-                    <svg className="w-4 h-4 text-red-400 " fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div className="flex items-center px-0 py-2 text-gray-400 rounded-lg opacity-50 cursor-not-allowed">
+                  <div className="w-8 h-8 bg-gray-500/20 rounded-full flex items-center justify-center mr-3">
+                    <svg className="w-4 h-4 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                     </svg>
                   </div>
                   <div>
-                    <div className="font-semibold">Register as Audience</div>
-                    <div className="text-xs text-gray-400">Join as an attendee</div>
+                    <div className="font-semibold">Registrations Closed</div>
+                    <div className="text-xs text-gray-500">Registration period has ended</div>
                   </div>
-                </Link>
+                </div>
               </div>
             </motion.div>
           </>
