@@ -264,42 +264,7 @@ export default function AboutPage() {
               </motion.div>
             </motion.button>
           </div>
-          {/* Call to Action */}
-          <div className="text-center animate-fade-in-delay-3">
-            <div className="bg-gradient-to-r from-red-600/20 to-red-800/20 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
-              <h3 className="text-2xl font-bold text-white mb-4">
-                Join the Transformation
-              </h3>
-              <p className="text-gray-300 mb-6 max-w-2xl mx-auto">
-                Be part of this incredible journey of change and discovery.
-                Experience the power of ideas that can transform lives and shape the future.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button
-                  onClick={() =>
-                    window.open(
-                      "https://vpulse.campx.in/vpulse/ums/public/form/68c93a448c6af42941ea051b",
-                      "_blank"
-                    )
-                  }
-                  className="px-8 py-3 bg-gradient-to-r from-red-600 to-red-700 text-white font-semibold rounded-full hover:scale-105 transition-transform duration-300 shadow-lg hover:shadow-red-600/25 cursor-pointer"
-                >
-                  Register Now
-                </button>
-
-                <button
-                  onClick={()=>{
-                    window.open(
-                      "https://www.ted.com/tedx/events/64186",
-                      "_blank"
-                    )
-                  }}
-                className="px-8 py-3 bg-white/10 text-white font-semibold rounded-full hover:bg-white/20 transition-colors duration-300 border border-white/20 cursor-pointer">
-                  Learn More
-                </button>
-              </div>
-            </div>
-          </div>
+          {/* Removed CTA as registrations are closed */}
         </div>
       </section>
     </div>

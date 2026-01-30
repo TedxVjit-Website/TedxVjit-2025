@@ -145,18 +145,10 @@ export default function JoinTedxSection() {
               </p>
               
               <motion.button
-                onClick={() => window.open("https://vpulse.campx.in/vpulse/ums/public/form/68c93a448c6af42941ea051b", "_blank")}
-                className="w-full bg-white text-black font-bold py-4 px-6 rounded-xl flex items-center justify-center gap-3 shadow-lg hover:shadow-white/30 transition-all duration-300 group/btn"
-                whileHover={{ y: -2 }}
-                whileTap={{ scale: 0.98 }}
+                disabled
+                className="w-full bg-gray-300 text-gray-700 font-bold py-4 px-6 rounded-xl flex items-center justify-center gap-3 shadow-lg cursor-not-allowed"
               >
-                <span className="text-base">Book Your Seat</span>
-                <motion.div
-                  animate={{ x: [0, 5, 0] }}
-                  transition={{ duration: 1.5, repeat: Infinity }}
-                >
-                  <ArrowRight className="w-5 h-5" />
-                </motion.div>
+                <span className="text-base">Registrations are closed</span>
               </motion.button>
             </div>
           </motion.div>
