@@ -13,7 +13,7 @@ const SchedulePreview = dynamic(() => import('../components/SchedulePreview'), {
 const PreviousPreview = dynamic(() => import('../components/PreviousPreview'), { ssr: false })
 const CountdownPreview = dynamic(() => import('@/components/CountdownPreview'), { ssr: false })
 const JoinTedxSection = dynamic(() => import('../components/JoinTedxSection'), { ssr: false })
-const SponsorsPreview = dynamic(() => import('@/components/SponsorsPreview'), { ssr: false })
+// const SponsorsPreview = dynamic(() => import('@/components/SponsorsPreview'), { ssr: false })
 const MapSection = dynamic(() => import('@/components/MapSection'), { ssr: false })
 const InstagramModal = dynamic(() => import('../components/InstagramModal'), { ssr: false })
 
@@ -71,7 +71,7 @@ export default function Home() {
           <PreviousPreview />
           <CountdownPreview />
           <JoinTedxSection />
-          <SponsorsPreview />
+          {/* <SponsorsPreview /> */}
           <MapSection />
         </div>
       </div>
